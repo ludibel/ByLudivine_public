@@ -97,13 +97,17 @@ lancement de l'application
 
 Pour ouvrir le site Internet :
 
-1. Ouvrez votre navigateur et connectez vous sur http://localhost:3000
+1. Ouvrez votre navigateur et connectez-vous sur http://localhost:3000
 
 Pour ouvrir le serveur SMTP :
 
-2. Ouvrez votre navigateur et connectez vous sur http://localhost:1080
+2. Ouvrez votre navigateur et connectez-vous sur http://localhost:1080
 
 Lorsque vous envoyez un email au travers du formulaire de contact du site, vous pouvez voir, au sein de Mailcatcher, votre email arriver.
+
+Pour tester le sitemap
+
+3. Ouvrez votre navigateur et connectez-vous sur http://localhost:3000/sitemap.xml
 
 ## Quitter et arrêter le conteneur
 
