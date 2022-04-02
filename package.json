@@ -1,0 +1,39 @@
+{
+  "name": "site_byludivine",
+  "private": true,
+  "extends": "next",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ./ --ext js,jsx,ts,tsx"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.6.0",
+    "@emotion/styled": "^11.6.0",
+    "@fortawesome/fontawesome-free": "^6.0.0",
+    "@mui/icons-material": "^5.2.0",
+    "@mui/material": "^5.1.1",
+    "@mui/styles": "^5.4.2",
+    "axios": "^0.26.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "next": "^12.1.0",
+    "nodemailer": "^6.7.2",
+    "noisejs": "^2.1.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-google-recaptcha": "^2.1.0",
+    "react-slick": "^0.28.1",
+    "sharp": "^0.30.2",
+    "swr": "^1.2.2",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^12.1.0",
+    "eslint": "7",
+    "eslint-config-next": "^12.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.0"
+  }
+}

@@ -1,0 +1,39 @@
+html,
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+/* permet de faire un decalage lorsque l'on ancre sur une div de notre page, cette dernière ne sera alors pas cachée par la navBar fixe  */
+div:target {
+  padding-top: 7em;
+  margin-top: -7em;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: url('../public/mouse-pointer.png'), pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+/* pointer custom sur les images des projets*/
+.image {
+  cursor: url('../public/zoom-in.png'), pointer;
+}
+.imageBis {
+  cursor: url('../public/mouse-pointer.png'), pointer;
+}
+
+/* permet d'aligner un button dans les cards (CardProjet, CardTechno, CardCompetence) si on y met un button au lieu d'un texte  */
+.paragrapheBtnCenter {
+  text-align: center;
+}
+.paragrapheBtnJustify {
+  text-align: justify;
+}
