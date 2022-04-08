@@ -1,8 +1,10 @@
 // import next/react
-import Head from 'next/head'
-import PropTypes from 'prop-types'
+import Head from 'next/head';
+import PropTypes from 'prop-types';
 
-const dataMetaTwitter = ({ url, description, titleSeo, image }) => {
+const dataMetaTwitter = ({
+  url, description, titleSeo, image,
+}) => {
   const metaTags = [
     {
       key: 'twittercard',
@@ -17,10 +19,12 @@ const dataMetaTwitter = ({ url, description, titleSeo, image }) => {
     },
     { key: 'twitterimage', name: 'twitter:image', content: image },
     { key: 'twittersite', name: 'twitter:site', content: '@LudivineTwit' },
-  ]
-  return metaTags
-}
-const dataMetaOg = ({ url, description, titleSeo, image }) => {
+  ];
+  return metaTags;
+};
+const dataMetaOg = ({
+  url, description, titleSeo, image,
+}) => {
   const metaTags = [
     { key: 'ogtitle', property: 'og:title', content: titleSeo },
     { key: 'ogtype', property: 'og:type', content: 'siteweb' },
@@ -28,11 +32,13 @@ const dataMetaOg = ({ url, description, titleSeo, image }) => {
     { key: 'ogimage', property: 'og:image', content: image },
     { key: 'ogdescription', property: 'og:description', content: description },
     { key: 'ogsitename', property: 'og:site_name', content: 'ByLudivine' },
-  ]
-  return metaTags
-}
+  ];
+  return metaTags;
+};
 
-const Seo = ({ url, titleSeo, title, description, image, author }) => {
+function Seo({
+  url, titleSeo, title, description, image, author,
+}) {
   return (
     <Head>
       <title>{title}</title>
@@ -41,19 +47,19 @@ const Seo = ({ url, titleSeo, title, description, image, author }) => {
       <meta name="description" content={description} />
       <meta name="author" content={author} />
       <link rel="icon" href="/logo-ByLudivine.png" />
-      {dataMetaTwitter({ url, description, titleSeo, image }).map(
-        ({ name, content }) => {
-          return <meta key={name} name={name} content={content} />
-        }
+      {dataMetaTwitter({
+        url, description, titleSeo, image,
+      }).map(
+        ({ name, content }) => <meta key={name} name={name} content={content} />,
       )}
 
-      {dataMetaOg({ url, description, titleSeo, image }).map(
-        ({ content, property }) => {
-          return <meta key={property} property={property} content={content} />
-        }
+      {dataMetaOg({
+        url, description, titleSeo, image,
+      }).map(
+        ({ content, property }) => <meta key={property} property={property} content={content} />,
       )}
     </Head>
-  )
+  );
 }
 
 Seo.propTypes = {
@@ -63,6 +69,6 @@ Seo.propTypes = {
   description: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-}
+};
 
-export default Seo
+export default Seo;

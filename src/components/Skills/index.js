@@ -1,34 +1,34 @@
 // import react/next
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react';
 // import style emotion
-import styled from '@emotion/styled'
-//import noise améliorer le visuel (lissage) d'un image
-import { Noise } from 'noisejs'
-//import mui
-import { Typography, Grid } from '@mui/material'
-import Zoom from '@mui/material/Zoom'
+import styled from '@emotion/styled';
+// import noise améliorer le visuel (lissage) d'un image
+import { Noise } from 'noisejs';
+// import mui
+import { Typography, Grid } from '@mui/material';
+import Zoom from '@mui/material/Zoom';
 // style
 const StyledGridContainer = styled('div')({
   background:
     'linear-gradient(180deg,rgba(244, 244, 244, 1) 0%,rgba(255, 255, 255, 1) 100%)',
   paddingTop: '1em',
-})
-const StyledGridTypo = styled(Grid)({ marginBottom: '2em' })
+});
+const StyledGridTypo = styled(Grid)({ marginBottom: '2em' });
 const StyledDiv = styled('div')({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   height: '100%',
-})
+});
 const StyledDivBubbles = styled('div')({
   height: '550px',
   overflow: 'hidden',
   position: 'relative',
   background: 'linear-gradient(200deg, #1E2E3E 20%, #22b99A 100%)',
-})
+});
 const StyledDivBubble = styled('div')({
   backgroundColor: 'white',
-  backgroundImage: `url('spritesheet_bubble_White_2.png')`,
+  backgroundImage: 'url(\'spritesheet_bubble_White_2.png\')',
   backgroundSize: '1076px 1076px',
   borderRadius: '50%',
   boxShadow: '0 15px 35px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.1)',
@@ -37,7 +37,7 @@ const StyledDivBubble = styled('div')({
   position: 'absolute',
   transition: 'opacity ease-in-out 1s',
   width: 152,
-})
+});
 const StyledTypoTitle = styled(Typography)(({ theme }) => ({
   textTransform: 'uppercase',
   fontWeight: '200',
@@ -54,17 +54,17 @@ const StyledTypoTitle = styled(Typography)(({ theme }) => ({
   '& span': {
     color: theme.palette.color.three,
   },
-}))
+}));
 
 // paramétres de noise
 // taille du canvas
-const CANVAS_WIDTH = 3000
+const CANVAS_WIDTH = 3000;
 // amplitude
-const NOISE_AMOUNT = 5
+const NOISE_AMOUNT = 5;
 // fréquence
-const NOISE_SPEED = 0.004
+const NOISE_SPEED = 0.004;
 // rapidité
-const SCROLL_SPEED = 0.3
+const SCROLL_SPEED = 0.3;
 // position des bulles
 const bubblesSkills = [
   {
@@ -232,20 +232,20 @@ const bubblesSkills = [
     x: 1990,
     y: 25,
   },
-]
+];
 
-const backgroundPositions = []
+const backgroundPositions = [];
 
 for (let i = 0; i < 7; i++) {
   for (let j = 0; j < 7; j++) {
-    backgroundPositions.push(`${-154 * j}px ${-154 * i}px`)
+    backgroundPositions.push(`${-154 * j}px ${-154 * i}px`);
   }
 }
 
-const noise = new Noise()
+const noise = new Noise();
 
-const Skills = () => {
-  const animationRef = useRef()
+function Skills() {
+  const animationRef = useRef();
   const bubblesRef = useRef(
     bubblesSkills.map((bubble) => ({
       ...bubble,
@@ -253,42 +253,42 @@ const Skills = () => {
       noiseSeedY: Math.floor(Math.random() * 64000),
       xWithNoise: bubble.x,
       yWithNoise: bubble.y,
-    }))
-  )
+    })),
+  );
 
-  const [isReady, setReady] = useState(false)
+  const [isReady, setReady] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
-      setReady(true)
-    }, 200)
+      setReady(true);
+    }, 200);
 
-    animationRef.current = requestAnimationFrame(animate)
+    animationRef.current = requestAnimationFrame(animate);
 
     return () => {
       if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current)
+        cancelAnimationFrame(animationRef.current);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   function animate() {
     bubblesRef.current = bubblesRef.current.map((bubble, index) => {
-      const newNoiseSeedX = bubble.noiseSeedX + NOISE_SPEED
-      const newNoiseSeedY = bubble.noiseSeedY + NOISE_SPEED
+      const newNoiseSeedX = bubble.noiseSeedX + NOISE_SPEED;
+      const newNoiseSeedY = bubble.noiseSeedY + NOISE_SPEED;
 
-      const randomX = noise.simplex2(newNoiseSeedX, 0)
-      const randomY = noise.simplex2(newNoiseSeedY, 0)
+      const randomX = noise.simplex2(newNoiseSeedX, 0);
+      const randomY = noise.simplex2(newNoiseSeedY, 0);
 
-      const newX = bubble.x - SCROLL_SPEED
+      const newX = bubble.x - SCROLL_SPEED;
 
-      const newXWithNoise = newX + randomX * NOISE_AMOUNT
-      const newYWithNoise = bubble.y + randomY * NOISE_AMOUNT
+      const newXWithNoise = newX + randomX * NOISE_AMOUNT;
+      const newYWithNoise = bubble.y + randomY * NOISE_AMOUNT;
 
-      const element = document.getElementById(`bubble-${index}`)
+      const element = document.getElementById(`bubble-${index}`);
 
       if (element) {
-        element.style.transform = `translate(${newXWithNoise}px, ${newYWithNoise}px) scale(${bubble.s})`
+        element.style.transform = `translate(${newXWithNoise}px, ${newYWithNoise}px) scale(${bubble.s})`;
       }
 
       return {
@@ -298,10 +298,10 @@ const Skills = () => {
         x: newX < -200 ? CANVAS_WIDTH : newX,
         xWithNoise: newXWithNoise,
         yWithNoise: newYWithNoise,
-      }
-    })
+      };
+    });
 
-    animationRef.current = requestAnimationFrame(animate)
+    animationRef.current = requestAnimationFrame(animate);
   }
   return (
     <StyledGridContainer
@@ -313,9 +313,11 @@ const Skills = () => {
       id="Technos"
     >
       <StyledGridTypo item xs={12}>
-        <Zoom in={true} timeout={3000}>
+        <Zoom in timeout={3000}>
           <StyledTypoTitle variant="h3">
-            Technologies <span>Utilisées</span>
+            Technologies
+            {' '}
+            <span>Utilisées</span>
           </StyledTypoTitle>
         </Zoom>
       </StyledGridTypo>
@@ -336,7 +338,7 @@ const Skills = () => {
         </StyledDiv>
       </Grid>
     </StyledGridContainer>
-  )
+  );
 }
 
-export default Skills
+export default Skills;

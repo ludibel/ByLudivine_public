@@ -1,17 +1,17 @@
 // import react / next
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 // import Emotion style
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 // import composants
-import Container from '../../src/components/Container'
-import HeaderPage from '../../src/components/HeaderPage'
-import image3dinvest from '../../public/imagesPortFolio/application-3dinvest.png'
-import imageDashboard from '../../public/imagesPortFolio/dashboard_image1B.png'
-import imageByLudivine from '../../public/imagesPortFolio/portfolio_bl.png'
+import { Grid, Button, Typography } from '@mui/material';
+import Container from '../../src/components/Container';
+import HeaderPage from '../../src/components/HeaderPage';
+import image3dinvest from '../../public/imagesPortFolio/application-3dinvest.png';
+import imageDashboard from '../../public/imagesPortFolio/dashboard_image1B.png';
+import imageByLudivine from '../../public/imagesPortFolio/portfolio_bl.png';
 // import mui
-import { Grid, Button, Typography } from '@mui/material'
 
 const StyledGridContainer = styled(Grid)({
   textAlign: 'center',
@@ -32,8 +32,8 @@ const StyledGridContainer = styled(Grid)({
   '@media (max-width: 768px)': {
     flexDirection: 'row-reverse',
   },
-})
-const StyledGridCard = styled(Grid)({ marginBottom: '1.5em' })
+});
+const StyledGridCard = styled(Grid)({ marginBottom: '1.5em' });
 const StyledTypoTitle = styled(Typography)(({ theme }) => ({
   color: theme.palette.color.three,
   fontSize: '1.5em',
@@ -43,11 +43,11 @@ const StyledTypoTitle = styled(Typography)(({ theme }) => ({
   '@media(min-width: 768px)': {
     fontSize: '3em',
   },
-}))
+}));
 const StyledGridTitle = styled(Grid)({
   marginTop: '1em',
   marginBottom: '1em',
-})
+});
 const StyledGridImage = styled(Grid)(({ theme }) => ({
   position: 'relative',
   padding: 8,
@@ -63,7 +63,7 @@ const StyledGridImage = styled(Grid)(({ theme }) => ({
   '@media (max-width:767px)': {
     display: 'none',
   },
-}))
+}));
 const StyledGridImageBis = styled(Grid)(({ theme }) => ({
   position: 'relative',
   padding: 8,
@@ -79,20 +79,20 @@ const StyledGridImageBis = styled(Grid)(({ theme }) => ({
   '@media (max-width:767px)': {
     display: 'none',
   },
-}))
+}));
 const StyledGridImageMobile = styled(Grid)(({ theme }) => ({
   '@media (min-width:768px)': {
     display: 'none',
   },
-}))
+}));
 const StyledGridText = styled(Grid)({
-  backgroundImage: `url('bg_bubble_bis.png')`,
+  backgroundImage: 'url(\'bg_bubble_bis.png\')',
   backgroundSize: 'cover',
   backgroundColor: '#F5F5F5',
   backgroundAttachment: 'fixed',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
-})
+});
 
 const StyledTypoTextOne = styled(Typography)(({ theme }) => ({
   color: theme.palette.color.one,
@@ -102,13 +102,13 @@ const StyledTypoTextOne = styled(Typography)(({ theme }) => ({
   '@media (min-width:768px)': {
     padding: '0 1em',
   },
-}))
+}));
 const StyledTypoSubtitle = styled(Typography)(({ theme }) => ({
   color: theme.palette.color.three,
   fontSize: '1em',
   marginBottom: '1em',
   fontWeight: 700,
-}))
+}));
 const StyledButton = styled(Button)(({ theme }) => ({
   backgroundColor: theme.palette.color.three,
   color: '#fff',
@@ -127,7 +127,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
   fontWeight: 400,
   marginBottom: '2em',
   marginTop: '1em',
-}))
+}));
 const StyledDiv = styled('div')(({ theme }) => ({
   position: 'relative',
   width: '100%',
@@ -135,8 +135,8 @@ const StyledDiv = styled('div')(({ theme }) => ({
   '& span': {
     margin: 10,
   },
-}))
-const MesProjets = () => {
+}));
+function MesProjets() {
   return (
     <Container title="ByLudivine_MesProjets">
       <HeaderPage title="Mes Projets" />
@@ -162,7 +162,9 @@ const MesProjets = () => {
           >
             <StyledGridText item xs={12} sm={8}>
               <StyledTypoTextOne variant="h2">
-                Projet d'une application Web <br />
+                Projet d'une application Web
+                {' '}
+                <br />
                 d'investissement immobilier
               </StyledTypoTextOne>
               <StyledTypoSubtitle variant="subtitle1" component="div">
@@ -217,7 +219,9 @@ const MesProjets = () => {
             </StyledGridImageBis>
             <StyledGridText item xs={12} sm={8}>
               <StyledTypoTextOne variant="h2">
-                Projet d'application web <br />
+                Projet d'application web
+                {' '}
+                <br />
                 de réalisation d'un dashboard
               </StyledTypoTextOne>
               <StyledTypoSubtitle variant="subtitle1" component="div">
@@ -250,7 +254,11 @@ const MesProjets = () => {
           >
             <StyledGridText item xs={12} sm={8}>
               <StyledTypoTextOne variant="h2">
-                Projet d'un site Internet <br /> professionnel responsive
+                Projet d'un site Internet
+                {' '}
+                <br />
+                {' '}
+                professionnel responsive
               </StyledTypoTextOne>
               <StyledTypoSubtitle variant="subtitle1" component="div">
                 Réalisé avec React, Nextjs et Mui
@@ -285,7 +293,7 @@ const MesProjets = () => {
         </StyledGridCard>
       </StyledGridContainer>
     </Container>
-  )
+  );
 }
 
-export default MesProjets
+export default MesProjets;

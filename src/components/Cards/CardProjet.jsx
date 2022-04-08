@@ -1,10 +1,12 @@
 // import react / next
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 // import emotion
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 // import mui
-import { CardContent, Typography, Card, Divider } from '@mui/material'
+import {
+  CardContent, Typography, Card, Divider,
+} from '@mui/material';
 // style
 const ItemCard = styled(Card)(({ theme }) => ({
   padding: '0.5em',
@@ -14,7 +16,7 @@ const ItemCard = styled(Card)(({ theme }) => ({
   borderRadius: 15,
   height: '100%',
   padding: '16px 2px',
-}))
+}));
 const StyledTypoTitle = styled(Typography)(({ theme }) => ({
   textTransform: 'uppercase',
   fontWeight: '700',
@@ -24,7 +26,7 @@ const StyledTypoTitle = styled(Typography)(({ theme }) => ({
     color: theme.palette.color.three,
   },
   fontSize: theme.typography.portfoliotitle.fontSize,
-}))
+}));
 const StyledTypoContent = styled(Typography)(({ theme }) => ({
   paddingBottom: '0.5em',
   '& a': {
@@ -47,39 +49,37 @@ const StyledTypoContent = styled(Typography)(({ theme }) => ({
       color: theme.palette.color.two,
     },
   },
-}))
+}));
 const StyledDivider = styled(Divider)(({ theme }) => ({
   borderColor: theme.palette.color.three,
-}))
+}));
 const StyledCardContentTitle = styled(CardContent)({
   padding: '16px 0',
-})
+});
 
-const CardProjet = ({ datas }) => {
+function CardProjet({ datas }) {
   return (
-    <>
-      <ItemCard elevation={0}>
-        <StyledCardContentTitle>
-          <StyledTypoTitle variant="h2" component="h2">
-            Description <span> du projet</span>
-          </StyledTypoTitle>
-        </StyledCardContentTitle>
-        <StyledDivider />
-        <CardContent>
-          {datas.map((data) => {
-            return (
-              <StyledTypoContent key={data.key} className={data.className}>
-                {data.content}
-              </StyledTypoContent>
-            )
-          })}
-        </CardContent>
-      </ItemCard>
-    </>
-  )
+    <ItemCard elevation={0}>
+      <StyledCardContentTitle>
+        <StyledTypoTitle variant="h2" component="h2">
+          Description
+          {' '}
+          <span> du projet</span>
+        </StyledTypoTitle>
+      </StyledCardContentTitle>
+      <StyledDivider />
+      <CardContent>
+        {datas.map((data) => (
+          <StyledTypoContent key={data.key} className={data.className}>
+            {data.content}
+          </StyledTypoContent>
+        ))}
+      </CardContent>
+    </ItemCard>
+  );
 }
 
 CardProjet.propTypes = {
   datas: PropTypes.array.isRequired,
-}
-export default CardProjet
+};
+export default CardProjet;

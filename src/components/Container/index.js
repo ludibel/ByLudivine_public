@@ -1,19 +1,19 @@
 // import react / next
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 // import Emotion styled
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 // import composant interne
-import ScrollTop from '../ScrollTop'
-import NavBar from '../Nav'
-import Footer from '../Footer'
-import Seo from '../../components/Seo'
+import ScrollTop from '../ScrollTop';
+import NavBar from '../Nav';
+import Footer from '../Footer';
+import Seo from '../Seo';
 // import image
-import logo from '../../../public/logo-ByLudivine.png'
-import imageTag from '../../../public/site_ByLudivine.png'
+import logo from '../../../public/logo-ByLudivine.png';
+import imageTag from '../../../public/site_ByLudivine.png';
 
 // le composant Container permet de disposer la navbar, footer sur les différentes pages
-const Container = ({ children, title }) => {
+function Container({ children, title }) {
   const StyledDiv = styled('div')({
     display: 'flex',
     flexDirection: 'column',
@@ -23,7 +23,7 @@ const Container = ({ children, title }) => {
       marginLeft: '50em',
       marginRight: '50em',
     },
-  })
+  });
 
   return (
     <StyledDiv>
@@ -40,7 +40,7 @@ const Container = ({ children, title }) => {
       <main>{children}</main>
       <Footer logo={logo} />
     </StyledDiv>
-  )
+  );
 }
 
 Container.propTypes = {
@@ -49,5 +49,5 @@ Container.propTypes = {
     PropTypes.arrayOf(PropTypes.element),
   ]).isRequired,
   title: PropTypes.string.isRequired,
-}
-export default Container
+};
+export default Container;

@@ -1,9 +1,9 @@
 // import externe
-import PropTypes from 'prop-types'
-import styled from '@emotion/styled'
+import PropTypes from 'prop-types';
+import styled from '@emotion/styled';
 // import mui icons
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 // style
 const StyledDiv = styled('div')({
   '& svg': {
@@ -24,16 +24,15 @@ const StyledDiv = styled('div')({
       fontSize: '3em',
     },
   },
-})
+});
 
-const Arrow = ({ direction, onClick }) => {
-  const icon =
-    direction === 'left' ? <ArrowBackIosIcon /> : <ArrowForwardIosIcon />
+function Arrow({ direction, onClick }) {
+  const icon = direction === 'left' ? <ArrowBackIosIcon /> : <ArrowForwardIosIcon />;
 
-  return <StyledDiv onClick={onClick}>{icon}</StyledDiv>
+  return <StyledDiv onClick={onClick}>{icon}</StyledDiv>;
 }
 Arrow.propTypes = {
   direction: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
-}
-export default Arrow
+};
+export default Arrow;

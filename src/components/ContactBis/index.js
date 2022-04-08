@@ -1,19 +1,21 @@
 // import Emotion Style et keyframe pour animations
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 // import mui
-import Zoom from '@mui/material/Zoom'
-import { Button, Grid, Typography, Box } from '@mui/material'
+import Zoom from '@mui/material/Zoom';
+import {
+  Button, Grid, Typography, Box,
+} from '@mui/material';
 // import interne
-import FieldContact from './Field'
-import ScrollToFade from '../Animations/Fade'
-import ScrollToSlide from '../Animations/Slide'
-import TextTranslateInfinite from '../Animations/TextTranslateInfinite'
+import FieldContact from './Field';
+import ScrollToFade from '../Animations/Fade';
+import ScrollToSlide from '../Animations/Slide';
+import TextTranslateInfinite from '../Animations/TextTranslateInfinite';
 
 // style avec Emotion
 const StyledGridContainer = styled(Grid)({
   paddingTop: '2em',
   paddingBottom: '2em',
-})
+});
 const StyledTypoFormOne = styled(Typography)(({ theme }) => ({
   color: theme.palette.color.three,
   fontWeight: 700,
@@ -22,7 +24,7 @@ const StyledTypoFormOne = styled(Typography)(({ theme }) => ({
   '@media (min-width: 720px)': {
     fontSize: '3em',
   },
-}))
+}));
 const StyledGridTypoBody = styled(Grid)({
   textAlign: 'justify',
   paddingLeft: '2em',
@@ -40,7 +42,7 @@ const StyledGridTypoBody = styled(Grid)({
     marginLeft: '15em',
     marginRight: '15em',
   },
-})
+});
 const StyledGridMalt = styled(Grid)(({ theme }) => ({
   textAlign: 'center',
   backgroundColor: theme.palette.color.three,
@@ -53,7 +55,7 @@ const StyledGridMalt = styled(Grid)(({ theme }) => ({
     marginTop: '2em',
     marginBottom: '2em',
   },
-}))
+}));
 const StyledGridContainerMalt = styled(Grid)(({ theme }) => ({
   marginTop: '1.5em',
   marginBottom: '1.5em',
@@ -62,7 +64,7 @@ const StyledGridContainerMalt = styled(Grid)(({ theme }) => ({
     marginBottom: '2em',
   },
   paddingLeft: '0.6em',
-}))
+}));
 const StyledButton = styled(Button)(({ theme }) => ({
   color: '#fff',
   border: `2px solid ${theme.palette.color.one}`,
@@ -79,7 +81,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
   },
   fontWeight: 400,
   borderRadius: 10,
-}))
+}));
 const StyledTypoMaltOne = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
   color: theme.palette.color.one,
@@ -88,7 +90,7 @@ const StyledTypoMaltOne = styled(Typography)(({ theme }) => ({
   '@media (min-width: 720px)': {
     fontSize: '3em',
   },
-}))
+}));
 const StyledTypoMaltBis = styled(Typography)({
   fontWeight: 700,
   color: '#fff',
@@ -99,7 +101,7 @@ const StyledTypoMaltBis = styled(Typography)({
   '@media (min-width: 2000px)': {
     fontSize: '1.7em',
   },
-})
+});
 const StyledTypoFormBis = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
   color: theme.palette.color.one,
@@ -110,20 +112,20 @@ const StyledTypoFormBis = styled(Typography)(({ theme }) => ({
   '@media (min-width: 2000px)': {
     fontSize: '1.7em',
   },
-}))
+}));
 const StyledGridButtonMalt = styled(Grid)({
   paddingBottom: '1em',
-})
+});
 const StyledGridFormButton = styled(Grid)({
   marginTop: '1em',
   marginBottom: '1em',
-})
+});
 const StyledGridForm = styled(Grid)({
   textAlign: 'center',
   backgroundColor: '#F5F5F5',
   paddingBottom: '12em',
   paddingTop: '2em',
-})
+});
 const StyledGridField = styled(Grid)({
   marginLeft: '1em',
   marginRight: '1em',
@@ -148,7 +150,7 @@ const StyledGridField = styled(Grid)({
     marginLeft: '35em',
     marginRight: '35em',
   },
-})
+});
 const StyledTypoTitle = styled(Typography)(({ theme }) => ({
   textTransform: 'uppercase',
   fontWeight: '200',
@@ -166,7 +168,7 @@ const StyledTypoTitle = styled(Typography)(({ theme }) => ({
   '& span': {
     color: theme.palette.color.three,
   },
-}))
+}));
 const StyledTypography = styled(Typography)(({ theme }) => ({
   color: theme.palette.color.three,
   fontSize: theme.typography.paragrapheSmall.fontSize,
@@ -177,18 +179,19 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
     fontWeight: 700,
     color: theme.palette.color.one,
   },
-}))
+}));
 const StyledBox = styled(Box)({
   marginTop: '3em',
-})
+});
 
-const Contact = () => {
+function Contact() {
   return (
     <StyledBox>
       <TextTranslateInfinite />
-      <Zoom in={true} timeout={3000}>
+      <Zoom in timeout={3000}>
         <StyledTypoTitle variant="h3" component="h3">
-          Prendre<span> contact </span>
+          Prendre
+          <span> contact </span>
         </StyledTypoTitle>
       </Zoom>
       <StyledGridContainer
@@ -200,8 +203,12 @@ const Contact = () => {
       >
         <StyledGridTypoBody item xs={12}>
           <StyledTypography variant="body1">
-            Si vous souhaitez que nous échangions autour de votre{' '}
-            <span> projet </span>ou de vos<span> besoins</span>, vous pouvez me
+            Si vous souhaitez que nous échangions autour de votre
+            {' '}
+            <span> projet </span>
+            ou de vos
+            <span> besoins</span>
+            , vous pouvez me
             contacter, soit par la plateforme de mise en relation de freelances
             MALT, soit directement par le formulaire de contact ci-dessous.
           </StyledTypography>
@@ -261,7 +268,7 @@ const Contact = () => {
         </StyledGridForm>
       </ScrollToFade>
     </StyledBox>
-  )
+  );
 }
 
-export default Contact
+export default Contact;

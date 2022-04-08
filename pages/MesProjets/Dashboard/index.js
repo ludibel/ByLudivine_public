@@ -1,27 +1,27 @@
 // import react/next
-import { useState, useEffect, useCallback } from 'react'
-//import style emotion
-import styled from '@emotion/styled'
+import { useState, useEffect, useCallback } from 'react';
+// import style emotion
+import styled from '@emotion/styled';
 /// import mui
-import { Grid, Card, Typography } from '@mui/material'
-import Slide from '@mui/material/Slide'
+import { Grid, Card, Typography } from '@mui/material';
+import Slide from '@mui/material/Slide';
 
 // import components
-import ModalImage from '../ModalImage'
-import Container from '../../../src/components/Container'
-import HeaderPage from '../../../src/components/HeaderPage'
-import Carousel from '../../../src/components/Carousel'
-import Arrow from '../../../src/components/Carousel/Arrow'
-import CardProjet from '../../../src/components/Cards/CardProjet'
-import CardCompetence from '../../../src/components/Cards/CardCompetence'
-import CardTechno from '../../../src/components/Cards/CardTechno'
+import ModalImage from '../ModalImage';
+import Container from '../../../src/components/Container';
+import HeaderPage from '../../../src/components/HeaderPage';
+import Carousel from '../../../src/components/Carousel';
+import Arrow from '../../../src/components/Carousel/Arrow';
+import CardProjet from '../../../src/components/Cards/CardProjet';
+import CardCompetence from '../../../src/components/Cards/CardCompetence';
+import CardTechno from '../../../src/components/Cards/CardTechno';
 // import des données
 import {
   listLogo,
   textProjet,
   textCompetence,
   slideInfo,
-} from '../../../src/datas/DatasDashboard'
+} from '../../../src/datas/DatasDashboard';
 // style
 const StyledGridContainer = styled(Grid)({
   textAlign: 'center',
@@ -39,10 +39,10 @@ const StyledGridContainer = styled(Grid)({
   '@media (min-width: 3000px)': {
     padding: '1em 0em',
   },
-})
+});
 const StyledGrid = styled(Grid)({
   borderRadius: 5,
-})
+});
 const Item = styled(Card)(({ theme }) => ({
   padding: '1em',
   textAlign: 'center',
@@ -55,7 +55,7 @@ const Item = styled(Card)(({ theme }) => ({
   '@media (min-width: 1200px)': {
     height: '100%',
   },
-}))
+}));
 const ItemCardImageOne = styled(Card)(({ theme }) => ({
   height: 250,
   '@media (min-width: 768px)': {
@@ -69,23 +69,23 @@ const ItemCardImageOne = styled(Card)(({ theme }) => ({
   color: '#fff',
   backgroundColor: theme.palette.color.three,
   borderRadius: 15,
-}))
+}));
 const StyledGridImage = styled(Grid)({
   height: '100%',
-})
+});
 const StyledGridItem = styled(Grid)({
   height: '100%',
   marginTop: 0,
-})
+});
 const StyledGridCarousel = styled(Grid)({
   position: 'relative',
   height: '100%',
   cursor: 'zoom-in',
-})
+});
 const StyledGridTitle = styled(Grid)({
   marginTop: '1em',
   marginBottom: '1em',
-})
+});
 const StyledTypoTitle = styled(Typography)(({ theme }) => ({
   color: theme.palette.color.three,
   fontSize: '1.5em',
@@ -95,64 +95,64 @@ const StyledTypoTitle = styled(Typography)(({ theme }) => ({
   '@media(min-width: 768px)': {
     fontSize: '3em',
   },
-}))
-const ProjetDashboard = () => {
+}));
+function ProjetDashboard() {
   // state pour la gestion de la modal ModalImage
-  const [openModal, setOpenModal] = useState(false)
-  const [srcImage, setSrcImage] = useState('')
-  const [titleImage, setTitleImage] = useState('')
+  const [openModal, setOpenModal] = useState(false);
+  const [srcImage, setSrcImage] = useState('');
+  const [titleImage, setTitleImage] = useState('');
   // gestion du carousel
   // index permet de savoir sur quelle diapo on se situe
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(0);
   // definition du slide et sa direction selon que l'on soit à droite ou à gauche
-  const [slideIn, setSlideIn] = useState(true)
-  const [slideDirection, setSlideDirection] = useState('left')
-  const content = slideInfo[index]
-  const numSlides = slideInfo.length
+  const [slideIn, setSlideIn] = useState(true);
+  const [slideDirection, setSlideDirection] = useState('left');
+  const content = slideInfo[index];
+  const numSlides = slideInfo.length;
   // e.keyCode permet de slider sur les images avec les fléches du clavier
   // useCallback permer de ne pas déclencher l'evenement useEffect à chaque rendu du composant
   const handleKeyPress = useCallback((e) => {
     if (e.keyCode === 39) {
-      onArrowClick('right')
+      onArrowClick('right');
     }
     if (e.keyCode === 37) {
-      onArrowClick('left')
+      onArrowClick('left');
     }
-  }, [])
+  }, []);
   useEffect(() => {
     // ajoute l'évenement
-    document.addEventListener('keydown', handleKeyPress)
+    document.addEventListener('keydown', handleKeyPress);
     // supprime l'évenement
     return () => {
-      document.removeEventListener('keydown', handleKeyPress)
-    }
-  }, [handleKeyPress])
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [handleKeyPress]);
   // fonction permettant de prendre une direction et de mettre à jour l'index
   const onArrowClick = (direction) => {
     // incrémentation selon la direction
-    const increment = direction === 'left' ? -1 : 1
-    const newIndex = (index + increment + numSlides) % numSlides
-    const oppDirection = direction === 'left' ? 'right' : 'left'
-    setSlideDirection(direction)
-    setSlideIn(false)
+    const increment = direction === 'left' ? -1 : 1;
+    const newIndex = (index + increment + numSlides) % numSlides;
+    const oppDirection = direction === 'left' ? 'right' : 'left';
+    setSlideDirection(direction);
+    setSlideIn(false);
     // setTimeout permet de mettre en place un tempo entre la sortie de la diapo actuelle et l'entrée de la prochaine diapo
     setTimeout(() => {
-      setIndex(newIndex)
-      setSlideDirection(oppDirection)
-      setSlideIn(true)
-    }, 100)
-    setIndex(newIndex)
-    setSlideDirection(oppDirection)
-    setSlideIn(true)
-  }
+      setIndex(newIndex);
+      setSlideDirection(oppDirection);
+      setSlideIn(true);
+    }, 100);
+    setIndex(newIndex);
+    setSlideDirection(oppDirection);
+    setSlideIn(true);
+  };
   // ouverture de ModalImage pour zoomer sur les photos
   const handleOpen = (place, title) => (evt) => {
-    setSrcImage(place.src)
-    setTitleImage(title)
-    setOpenModal(true)
-  }
+    setSrcImage(place.src);
+    setTitleImage(title);
+    setOpenModal(true);
+  };
   // fermeture de Modalmage
-  const handleClose = () => setOpenModal(false)
+  const handleClose = () => setOpenModal(false);
 
   return (
     <>
@@ -240,7 +240,7 @@ const ProjetDashboard = () => {
         </StyledGridContainer>
       </Container>
     </>
-  )
+  );
 }
 
-export default ProjetDashboard
+export default ProjetDashboard;

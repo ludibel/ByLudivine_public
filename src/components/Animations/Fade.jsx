@@ -1,25 +1,27 @@
 // import react / next
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 // import mui
-import Fade from '@mui/material/Fade'
+import Fade from '@mui/material/Fade';
 // useScroolTrigger permet de déclencher l'évènement lorsque l'on est sur le composant
-import useScrollTrigger from '@mui/material/useScrollTrigger'
+import useScrollTrigger from '@mui/material/useScrollTrigger';
 
-const ScrollToFade = ({ window, threshold, direction, timeout, children }) => {
+function ScrollToFade({
+  window, threshold, direction, timeout, children,
+}) {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
-    threshold: threshold,
+    threshold,
     target: window ? window() : undefined,
-    direction: direction,
-    timeout: timeout,
-  })
+    direction,
+    timeout,
+  });
 
   return (
-    <Fade appear={true} in={trigger}>
+    <Fade appear in={trigger}>
       {children}
     </Fade>
-  )
+  );
 }
 
 ScrollToFade.propTypes = {
@@ -28,5 +30,5 @@ ScrollToFade.propTypes = {
   direction: PropTypes.string,
   timeout: PropTypes.number,
   children: PropTypes.element.isRequired,
-}
-export default ScrollToFade
+};
+export default ScrollToFade;

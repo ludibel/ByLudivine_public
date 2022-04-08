@@ -1,5 +1,5 @@
 // import Emotion keyframe
-import { keyframes } from '@emotion/react'
+import { keyframes } from '@emotion/react';
 // animation en diagonale
 const animateDiagonal = keyframes`
 0%,
@@ -27,6 +27,6 @@ const animateDiagonal = keyframes`
   90% {
     transform: translate(-7px,-7px);
   }
-`
+`;
 
-export default animateDiagonal
+export default animateDiagonal;

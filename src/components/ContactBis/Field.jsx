@@ -1,15 +1,17 @@
 // import react
-import { useState } from 'react'
+import { useState } from 'react';
 // import axios
-import axios from 'axios'
+import axios from 'axios';
 // import pour validation des inputs
-import * as Yup from 'yup'
+import * as Yup from 'yup';
 // import reCAPTCHA
-import ReCAPTCHA from 'react-google-recaptcha'
+import ReCAPTCHA from 'react-google-recaptcha';
 // import Emotion style
-import styled from '@emotion/styled'
-//import Mui
-import { Grid, TextField, Button, Alert, AlertTitle } from '@mui/material'
+import styled from '@emotion/styled';
+// import Mui
+import {
+  Grid, TextField, Button, Alert, AlertTitle,
+} from '@mui/material';
 // style with Emotion
 const StyledField = styled(TextField)(({ theme }) => ({
   '& .MuiFilledInput-root': {
@@ -28,7 +30,7 @@ const StyledField = styled(TextField)(({ theme }) => ({
     color: theme.palette.color.three,
     fontWeight: 400,
   },
-}))
+}));
 const StyledButtonForm = styled(Button)(({ theme }) => ({
   color: '#fff',
   border: `2px solid ${theme.palette.color.one}`,
@@ -45,7 +47,7 @@ const StyledButtonForm = styled(Button)(({ theme }) => ({
   },
   fontWeight: 400,
   borderRadius: 10,
-}))
+}));
 const StyledAlert = styled(Alert)({
   marginBottom: '2em',
   '& .MuiAlert-icon': {
@@ -55,63 +57,63 @@ const StyledAlert = styled(Alert)({
     textAlign: 'center',
     width: '100%',
   },
-})
+});
 const StyledAlertTitle = styled(AlertTitle)({
   fontWeigh: 700,
-})
+});
 const StyledGridButton = styled(Grid)({
   marginTop: '1em',
-})
+});
 
-const FieldContact = () => {
+function FieldContact() {
   const [data, setData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     message: '',
     captcha: '',
-  })
+  });
   const [errors, setErrors] = useState({
     firstName: false,
     lastName: false,
     email: false,
     message: false,
-  })
+  });
 
   const messagesAlert = {
     error: 'Message non envoyé',
     success: 'Votre message a bien été envoyé',
-  }
-  const [messageAlert, setMessageAlert] = useState('')
+  };
+  const [messageAlert, setMessageAlert] = useState('');
   // state pour la vérification du reCAPTCHA
-  const [isVerified, setisVerified] = useState(false)
+  const [isVerified, setisVerified] = useState(false);
   // gestion reCAPTCHA
   const onReCAPTCHAChange = (response) => {
-    setisVerified(true)
-    setData({ ...data, captcha: response })
-  }
+    setisVerified(true);
+    setData({ ...data, captcha: response });
+  };
   // récuperation du contenu des champs du formulaire
   const handleChange = ({ currentTarget }) => {
-    const { name, value } = currentTarget
+    const { name, value } = currentTarget;
     if (!value[name]) {
-      setErrors({ ...errors, [name]: '' })
+      setErrors({ ...errors, [name]: '' });
     }
-    setData({ ...data, [name]: value })
-  }
+    setData({ ...data, [name]: value });
+  };
   // soumission du formulaire avec contrôle des champs du formulaire
   const handleSubmitForm = async (evt) => {
-    evt.preventDefault()
+    evt.preventDefault();
     // creation du schema de vérification des différents champs du formulaire
-    let formSchema = Yup.object().shape({
+    const formSchema = Yup.object().shape({
       lastName: Yup.string().required('Nom Obligatoire'),
       firstName: Yup.string().required('Prénom Obligatoire'),
       email: Yup.string()
         .email('Format email incorrect')
         .required('Email Obligatoire'),
       message: Yup.string().required('Message Obligatoire'),
-    })
+    });
     // validation des champs
-    const IsFormValid = await formSchema.isValid(data, { abortEarly: false }) // abortEarly empéche l'abandon de la vérification après la première erreur
+    const IsFormValid = await formSchema.isValid(data, { abortEarly: false }); // abortEarly empéche l'abandon de la vérification après la première erreur
 
     // si la validation de tous les champs est valide on continue la soumission du formulaire
     if (IsFormValid && isVerified) {
@@ -121,33 +123,31 @@ const FieldContact = () => {
         url: '/api/contact',
         data,
       })
-        .then(function () {
+        .then(() => {
           // la requete est bien passée alors on modifie le messageAlert
-          setMessageAlert(messagesAlert.success)
+          setMessageAlert(messagesAlert.success);
         })
-        .catch(function (error) {
-          //On récupère la liste des erreurs
-          const errorRequest = error.response.data
+        .catch((error) => {
+          // On récupère la liste des erreurs
+          const errorRequest = error.response.data;
           // on modifie le state des erreurs et le messageAlert
-          setErrors(errorRequest)
-          setMessageAlert(messagesAlert.error)
-        })
+          setErrors(errorRequest);
+          setMessageAlert(messagesAlert.error);
+        });
     } else {
       // si la validation des champs du formulaire a échoué on récupère les erreurs des champs incorrects
       formSchema.validate(data, { abortEarly: false }).catch((error) => {
         // on collecte les messages erreurs de chaque champs
-        const errors = error.inner.reduce((acc, error) => {
-          return {
-            ...acc,
-            [error.path]: error.message,
-          }
-        }, {})
+        const errors = error.inner.reduce((acc, error) => ({
+          ...acc,
+          [error.path]: error.message,
+        }), {});
         // on modifie le state des erreurs et les messages d'alerte
-        setErrors(errors)
-        setMessageAlert(messagesAlert.error)
-      })
+        setErrors(errors);
+        setMessageAlert(messagesAlert.error);
+      });
     }
-  }
+  };
 
   return (
     <>
@@ -155,7 +155,7 @@ const FieldContact = () => {
         <StyledAlert
           severity="error"
           onClose={() => {
-            setMessageAlert(null)
+            setMessageAlert(null);
           }}
         >
           <StyledAlertTitle>Erreur</StyledAlertTitle>
@@ -166,14 +166,14 @@ const FieldContact = () => {
         <StyledAlert
           severity="success"
           onClose={() => {
-            setMessageAlert(null)
+            setMessageAlert(null);
             setData({
               firstName: '',
               lastName: '',
               email: '',
               message: '',
               captcha: '',
-            })
+            });
           }}
         >
           <StyledAlertTitle>Succès</StyledAlertTitle>
@@ -267,7 +267,7 @@ const FieldContact = () => {
         </Grid>
       </form>
     </>
-  )
+  );
 }
 
-export default FieldContact
+export default FieldContact;

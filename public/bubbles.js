@@ -159,6 +159,6 @@ const bubblesHeader = [
     opacity: 1,
     displayMobile: true,
   },
-]
+];
 
-export default bubblesHeader
+export default bubblesHeader;

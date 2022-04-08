@@ -1,8 +1,8 @@
 // import next/react
-import Image from 'next/image'
-import PropTypes from 'prop-types'
+import Image from 'next/image';
+import PropTypes from 'prop-types';
 
-const CarouselSlide = ({ image, altImage }) => {
+function CarouselSlide({ image, altImage }) {
   return (
     <Image
       src={image}
@@ -11,11 +11,11 @@ const CarouselSlide = ({ image, altImage }) => {
       alt={altImage}
       className="image"
     />
-  )
+  );
 }
-export default CarouselSlide
+export default CarouselSlide;
 
 CarouselSlide.propTypes = {
   image: PropTypes.object.isRequired,
   altImage: PropTypes.string.isRequired,
-}
+};

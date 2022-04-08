@@ -1,12 +1,11 @@
 // import images / logos
-import logoReact from '../../public/logoTechnos/logo_react.png'
-import logoNodeMailer from '../../public/logoTechnos/logo_nodeMailer.png'
-import logoMui from '../../public/logoTechnos/logo_mui.png'
-import logoApi from '../../public/logoTechnos/logo_api.png'
-import logoDocker from '../../public/logoTechnos/logo_docker.png'
-import logoNext from '../../public/logoTechnos/logo_next_white.png'
-import logoEmotion from '../../public/logoTechnos/logo_emotion.png'
-import logoRecaptcha from '../../public/logoTechnos/logo_reCaptcha.png'
+import logoReact from '../../public/logoTechnos/logo_react.png';
+import logoNodeMailer from '../../public/logoTechnos/logo_nodeMailer.png';
+import logoMui from '../../public/logoTechnos/logo_mui.png';
+import logoDocker from '../../public/logoTechnos/logo_docker.png';
+import logoNext from '../../public/logoTechnos/logo_next_white.png';
+import logoEmotion from '../../public/logoTechnos/logo_emotion.png';
+import logoRecaptcha from '../../public/logoTechnos/logo_reCaptcha.png';
 // tableaux des données
 export const listLogo = [
   {
@@ -44,24 +43,24 @@ export const listLogo = [
     src: logoEmotion,
     alt: 'logo_emotion',
   },
-]
+];
 export const textProjet = [
   {
     className: 'paragrapheBtnJustify',
     key: 'card-content1',
-    content: `Pour présenter mon savoir faire en développement web, j’ai conçu le site Internet ByLudivine.com dans lequel je détaille quelques projets réalisés, les technologies utilisées ainsi que les compétences mises en oeuvre. `,
+    content: 'Pour présenter mon savoir faire en développement web, j’ai conçu le site Internet ByLudivine.com dans lequel je détaille quelques projets réalisés, les technologies utilisées ainsi que les compétences mises en oeuvre. ',
   },
   {
     className: 'paragrapheBtnJustify',
     key: 'card-content2',
-    content: `Ce site est une vitrine de mes compétences en développement qui permet à tout porteur d’un projet de valider que mon profil correspond à son besoin.`,
+    content: 'Ce site est une vitrine de mes compétences en développement qui permet à tout porteur d’un projet de valider que mon profil correspond à son besoin.',
   },
   {
     className: 'paragrapheBtnJustify',
     key: 'card-content3',
-    content: `Elément indispensable d’un site web, le formulaire de contact a été conçu en implémentant des mécanismes de sécurité pour éviter l’injection de code malveillant mais également pour éviter que ma boite email soit spamée de courriers indésirables. `,
+    content: 'Elément indispensable d’un site web, le formulaire de contact a été conçu en implémentant des mécanismes de sécurité pour éviter l’injection de code malveillant mais également pour éviter que ma boite email soit spamée de courriers indésirables. ',
   },
-]
+];
 export const textCompetence = [
   {
     key: 'card-comp1',
@@ -78,10 +77,10 @@ export const textCompetence = [
   },
   {
     key: 'card-comp5',
-    content: `Intégration de google reCAPTCHA afin d' éviter les spams`,
+    content: 'Intégration de google reCAPTCHA afin d\' éviter les spams',
   },
   {
     key: 'card-comp4',
-    content: `Utlisation de Docker pour l'environnement de développement`,
+    content: 'Utlisation de Docker pour l\'environnement de développement',
   },
-]
+];

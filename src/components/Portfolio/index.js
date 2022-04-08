@@ -1,11 +1,11 @@
 // import next / image
-import Image from 'next/image'
-import Link from 'next/link'
-import PropTypes from 'prop-types'
+import Image from 'next/image';
+import Link from 'next/link';
+import PropTypes from 'prop-types';
 // import Emotion style
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 // impot mui
-import Zoom from '@mui/material/Zoom'
+import Zoom from '@mui/material/Zoom';
 // import mui
 import {
   Grid,
@@ -15,23 +15,23 @@ import {
   Card,
   CardHeader,
   CardActions,
-} from '@mui/material'
+} from '@mui/material';
 // import interne animations
-import animateVertical from '../Animations/AnimVertical'
-import animateDiagonal from '../Animations/AnimDiagonal'
-import animateHorizontal from '../Animations/AnimHorizontal'
+import animateVertical from '../Animations/AnimVertical';
+import animateDiagonal from '../Animations/AnimDiagonal';
+import animateHorizontal from '../Animations/AnimHorizontal';
 // style
 const StyledBox = styled(Box)({
   paddingTop: '1em',
   paddingBottom: '2em',
-  backgroundImage: `url('bg_bubble_bis.png')`,
+  backgroundImage: 'url(\'bg_bubble_bis.png\')',
   backgroundSize: 'cover',
   backgroundColor: '#F5F5F5',
   backgroundAttachment: 'fixed',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
   overflow: 'hidden',
-})
+});
 const StyledCardOne = styled(Card)(({ theme }) => ({
   borderRadius: '50px 0px 50px 0px',
   backgroundColor: theme.palette.color.three,
@@ -47,7 +47,7 @@ const StyledCardOne = styled(Card)(({ theme }) => ({
   '@media (min-width: 2000px)': {
     width: 350,
   },
-}))
+}));
 const StyledCardBis = styled(Card)(({ theme }) => ({
   borderRadius: '50px 0px 50px 0px',
   width: '100%',
@@ -64,7 +64,7 @@ const StyledCardBis = styled(Card)(({ theme }) => ({
   '@media (min-width: 2000px)': {
     width: 350,
   },
-}))
+}));
 const StyledCardTer = styled(Card)(({ theme }) => ({
   borderRadius: '50px 0px 50px 0px',
   width: '100%',
@@ -81,7 +81,7 @@ const StyledCardTer = styled(Card)(({ theme }) => ({
   '@media (min-width: 2000px)': {
     width: 350,
   },
-}))
+}));
 const StyledButton = styled(Button)(({ theme }) => ({
   backgroundColor: theme.palette.color.one,
   color: '#fff',
@@ -98,7 +98,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
   },
   borderRadius: 10,
   fontWeight: 400,
-}))
+}));
 const StyledCardHeader = styled(CardHeader)(({ theme }) => ({
   '& .MuiCardHeader-title': {
     fontWeight: 700,
@@ -108,11 +108,11 @@ const StyledCardHeader = styled(CardHeader)(({ theme }) => ({
     fontWeight: 700,
     color: '#fff',
   },
-}))
+}));
 const StyledCardActions = styled(CardActions)({
   justifyContent: 'center',
   paddingBottom: '2em',
-})
+});
 const StyledTypoTitle = styled(Typography)(({ theme }) => ({
   textTransform: 'uppercase',
   fontWeight: '200',
@@ -131,7 +131,7 @@ const StyledTypoTitle = styled(Typography)(({ theme }) => ({
   '& span': {
     color: theme.palette.color.three,
   },
-}))
+}));
 const StyledGridContainerOne = styled(Grid)({
   paddingLeft: '1em',
   paddingRight: '1em',
@@ -140,14 +140,14 @@ const StyledGridContainerOne = styled(Grid)({
     paddingBottom: 16,
     marginTop: '2em',
   },
-})
+});
 const StyledGridContainerBis = styled(Grid)({
   '@media (min-width: 700px)': {
     paddingBottom: 16,
   },
   paddingLeft: '1em',
   paddingRight: '1em',
-})
+});
 const StyledGridImage = styled(Grid)({
   position: 'relative',
   width: 100,
@@ -156,7 +156,7 @@ const StyledGridImage = styled(Grid)({
     width: 200,
     height: 125,
   },
-})
+});
 const StyledGridCardOne = styled(Grid)({
   display: 'flex',
   justifyContent: 'center',
@@ -166,7 +166,7 @@ const StyledGridCardOne = styled(Grid)({
   '@media (min-width: 1024px)': {
     transform: 'translate(42%, -15%)',
   },
-})
+});
 const StyledGridCardBis = styled(Grid)({
   display: 'flex',
   justifyContent: 'center',
@@ -176,7 +176,7 @@ const StyledGridCardBis = styled(Grid)({
   '@media (min-width: 1024px)': {
     transform: 'translate(0%, -45%)',
   },
-})
+});
 const StyledGridCardTer = styled(Grid)({
   display: 'flex',
   justifyContent: 'center',
@@ -186,7 +186,7 @@ const StyledGridCardTer = styled(Grid)({
   '@media (min-width: 900px)': {
     transform: 'translate(-18%,3%)',
   },
-})
+});
 const StyledBoxContainer = styled(Box)({
   '@media (min-width: 1024px)': {
     width: 1024,
@@ -195,14 +195,16 @@ const StyledBoxContainer = styled(Box)({
     marginTop: '3em',
     marginBottom: '2em',
   },
-})
+});
 
-const Portfolio = ({ image3dinvest, imageDashboard, logo }) => {
+function Portfolio({ image3dinvest, imageDashboard, logo }) {
   return (
     <StyledBox id="MesProjets">
-      <Zoom in={true} timeout={3000}>
+      <Zoom in timeout={3000}>
         <StyledTypoTitle variant="h3">
-          Mes projets <span> web </span>
+          Mes projets
+          {' '}
+          <span> web </span>
         </StyledTypoTitle>
       </Zoom>
       <StyledBoxContainer>
@@ -333,11 +335,11 @@ const Portfolio = ({ image3dinvest, imageDashboard, logo }) => {
         </StyledGridContainerBis>
       </StyledBoxContainer>
     </StyledBox>
-  )
+  );
 }
 Portfolio.propTypes = {
   image3dinvest: PropTypes.object.isRequired,
   imageDashboard: PropTypes.object.isRequired,
   logo: PropTypes.object.isRequired,
-}
-export default Portfolio
+};
+export default Portfolio;

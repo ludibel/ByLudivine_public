@@ -1,11 +1,11 @@
 // import react / next
-import { forwardRef } from 'react'
-import Image from 'next/image'
-import PropTypes from 'prop-types'
+import { forwardRef } from 'react';
+import Image from 'next/image';
+import PropTypes from 'prop-types';
 // import Emotion styled
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 // import mui
-import { Dialog, DialogContent, Slide } from '@mui/material'
+import { Dialog, DialogContent, Slide } from '@mui/material';
 
 const StyledDialog = styled(Dialog)({
   '& .MuiPaper-root': {
@@ -15,17 +15,17 @@ const StyledDialog = styled(Dialog)({
     },
   },
   maxWidth: '100%',
-})
+});
 
 const StyledDialogContent = styled(DialogContent)({
   position: 'relative',
-})
+});
 // Transition utilise forwarRef afin d'obtenir la ref qui lui est passée et la transmettre à SLide DOM
-const Transition = forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />
-})
+const Transition = forwardRef((props, ref) => <Slide direction="up" ref={ref} {...props} />);
 
-const ModalImage = ({ onClose, open, image, alt }) => {
+function ModalImage({
+  onClose, open, image, alt,
+}) {
   return (
     <StyledDialog
       onClose={onClose}
@@ -37,7 +37,7 @@ const ModalImage = ({ onClose, open, image, alt }) => {
         <Image src={image} layout="fill" objectFit="contain" alt={alt} />
       </StyledDialogContent>
     </StyledDialog>
-  )
+  );
 }
 
 ModalImage.propTypes = {
@@ -45,5 +45,5 @@ ModalImage.propTypes = {
   open: PropTypes.bool.isRequired,
   image: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
-}
-export default ModalImage
+};
+export default ModalImage;

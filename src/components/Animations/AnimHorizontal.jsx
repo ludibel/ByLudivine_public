@@ -1,5 +1,5 @@
 // import keyframes Emotion
-import { keyframes } from '@emotion/react'
+import { keyframes } from '@emotion/react';
 // animation Horizontale
 const animateHorizontal = keyframes`
 0%,
@@ -27,5 +27,5 @@ const animateHorizontal = keyframes`
   90% {
     transform: translateX(-6.4px);
   }
-`
-export default animateHorizontal
+`;
+export default animateHorizontal;

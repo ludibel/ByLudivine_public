@@ -1,11 +1,11 @@
 // import react / next
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 // import Emotion Style
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 // import mui
-import { Grid, Typography } from '@mui/material'
+import { Grid, Typography } from '@mui/material';
 // import interne
-import bg from '../../../public/bg_bubble_bis.png'
+import bg from '../../../public/bg_bubble_bis.png';
 // style
 const StyledGridContainer = styled(Grid)({
   backgroundImage: `url(${bg.src})`,
@@ -16,10 +16,10 @@ const StyledGridContainer = styled(Grid)({
   backgroundRepeat: 'no-repeat',
   textAlign: 'center',
   padding: '0em 1em',
-})
+});
 const StyledGridTitleOne = styled(Grid)({
   textAlign: 'center',
-})
+});
 const StyledTypoOne = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
   color: theme.palette.color.one,
@@ -35,7 +35,7 @@ const StyledTypoOne = styled(Typography)(({ theme }) => ({
   '@media(min-width: 1440px)': {
     fontSize: '6em',
   },
-}))
+}));
 const StyledTypoBis = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
   color: theme.palette.color.three,
@@ -48,9 +48,9 @@ const StyledTypoBis = styled(Typography)(({ theme }) => ({
   '@media(min-width: 1440px)': {
     fontSize: '4em',
   },
-}))
+}));
 
-const HeaderPage = ({ title, variant }) => {
+function HeaderPage({ title, variant }) {
   return (
     <StyledGridContainer
       container
@@ -59,17 +59,23 @@ const HeaderPage = ({ title, variant }) => {
       spacing={2}
     >
       <StyledGridTitleOne item xs={12}>
-        <StyledTypoOne variant={variant}> {title}</StyledTypoOne>
+        <StyledTypoOne variant={variant}>
+          {' '}
+          {title}
+        </StyledTypoOne>
       </StyledGridTitleOne>
       <Grid item xs={12}>
-        <StyledTypoBis variant="body1"> {title}</StyledTypoBis>
+        <StyledTypoBis variant="body1">
+          {' '}
+          {title}
+        </StyledTypoBis>
       </Grid>
     </StyledGridContainer>
-  )
+  );
 }
 
 HeaderPage.propTypes = {
   title: PropTypes.string.isRequired,
   variant: PropTypes.string.isRequired,
-}
-export default HeaderPage
+};
+export default HeaderPage;
