@@ -1,12 +1,11 @@
 // import images / logos
-import logoReact from '../../public/logoTechnos/logo_react.png'
-import logoNodeMailer from '../../public/logoTechnos/logo_nodeMailer.png'
-import logoMui from '../../public/logoTechnos/logo_mui.png'
-import logoApi from '../../public/logoTechnos/logo_api.png'
-import logoDocker from '../../public/logoTechnos/logo_docker.png'
-import logoNext from '../../public/logoTechnos/logo_next_white.png'
-import logoEmotion from '../../public/logoTechnos/logo_emotion.png'
-import logoRecaptcha from '../../public/logoTechnos/logo_reCaptcha.png'
+import logoReact from '@public/logoTechnos/logo_react.png';
+import logoNodeMailer from '@public/logoTechnos/logo_nodeMailer.png';
+import logoMui from '@public/logoTechnos/logo_mui.png';
+import logoDocker from '@public/logoTechnos/logo_docker.png';
+import logoNext from '@public/logoTechnos/logo_next_white.png';
+import logoEmotion from '@public/logoTechnos/logo_emotion.png';
+import logoRecaptcha from '@public/logoTechnos/logo_reCaptcha.png';
 // tableaux des données
 export const listLogo = [
   {
@@ -44,7 +43,7 @@ export const listLogo = [
     src: logoEmotion,
     alt: 'logo_emotion',
   },
-]
+];
 export const textProjet = [
   {
     className: 'paragrapheBtnJustify',
@@ -61,7 +60,7 @@ export const textProjet = [
     key: 'card-content3',
     content: `Elément indispensable d’un site web, le formulaire de contact a été conçu en implémentant des mécanismes de sécurité pour éviter l’injection de code malveillant mais également pour éviter que ma boite email soit spamée de courriers indésirables. `,
   },
-]
+];
 export const textCompetence = [
   {
     key: 'card-comp1',
@@ -84,4 +83,4 @@ export const textCompetence = [
     key: 'card-comp4',
     content: `Utlisation de Docker pour l'environnement de développement`,
   },
-]
+];

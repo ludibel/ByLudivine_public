@@ -1,28 +1,33 @@
 // import react /next
-import { useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-//import style emotion
-import styled from '@emotion/styled'
-//import mui
-import { Grid, Card, CardContent, Typography } from '@mui/material'
-//import components
-import ModalImage from '../ModalImage'
-import Container from '../../../src/components/Container'
-import HeaderPage from '../../../src/components/HeaderPage'
-import CardProjet from '../../../src/components/Cards/CardProjet'
-import CardCompetence from '../../../src/components/Cards/CardCompetence'
-import CardTechno from '../../../src/components/Cards/CardTechno'
+import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+// import style emotion
+import styled from '@emotion/styled';
+// import mui
+import {
+  Grid,
+  Card,
+  CardContent,
+  Typography,
+} from '@mui/material';
+// import components
+import Container from '@components/Container';
+import HeaderPage from '@components/HeaderPage';
+import CardProjet from '@components/Cards/CardProjet';
+import CardCompetence from '@components/Cards/CardCompetence';
+import CardTechno from '@components/Cards/CardTechno';
+import ModalImage from 'pages/MesProjets/ModalImage';
 // import images/ logos
-import image3dinvest from '../../../public/imagesPortFolio/application-3dinvestpro.png'
-import imagePdf from '../../../public/imagesPortFolio/image_pdf_2.png'
+import image3dinvest from '@public/imagesPortFolio/application-3dinvestpro.png';
+import imagePdf from '@public/imagesPortFolio/image_pdf_2.png';
 // import des données
 import {
   listImage,
   listLogo,
   textProjet,
   textCompetence,
-} from '../../../src/datas/Datas3dinvest'
+} from '@datas/Datas3dinvest';
 // style
 const StyledGridContainer = styled(Grid)({
   textAlign: 'center',
@@ -40,14 +45,14 @@ const StyledGridContainer = styled(Grid)({
   '@media (min-width: 3000px)': {
     padding: '1em 0em',
   },
-})
+});
 const StyledGrid = styled(Grid)({
   borderRadius: 5,
-})
+});
 const StyledGridTitle = styled(Grid)({
   marginTop: '1em',
   marginBottom: '1em',
-})
+});
 const StyledTypoTitle = styled(Typography)(({ theme }) => ({
   color: theme.palette.color.three,
   fontSize: '1.5em',
@@ -57,7 +62,7 @@ const StyledTypoTitle = styled(Typography)(({ theme }) => ({
   '@media(min-width: 768px)': {
     fontSize: '3em',
   },
-}))
+}));
 const Item = styled(Card)(({ theme }) => ({
   padding: '1em',
   textAlign: 'center',
@@ -70,14 +75,14 @@ const Item = styled(Card)(({ theme }) => ({
   '@media (min-width: 1200px)': {
     height: '100%',
   },
-}))
+}));
 const ItemCardImageBis = styled(Card)(({ theme }) => ({
   padding: '1em',
   textAlign: 'center',
   color: theme.palette.color.three,
   borderRadius: 15,
   height: '100%',
-}))
+}));
 const ItemCardImageOne = styled(Card)(({ theme }) => ({
   backgroundColor: theme.palette.color.three,
   '@media (min-width: 1024px)': {
@@ -89,44 +94,41 @@ const ItemCardImageOne = styled(Card)(({ theme }) => ({
 
   borderRadius: 15,
   height: '100%',
-}))
+}));
 const StyledCardContent = styled(CardContent)({
   position: 'relative',
   height: 150,
   '@media (min-width: 768px)': {
     height: '100%',
   },
-})
+});
 const StyledGridImage = styled(Grid)({
   height: '100%',
-  cursor: 'zoom-in',
-  cursor: '-webkit-zoom-in',
-  cursor: '-moz-zoom-in',
-})
+});
 const StyledGridContainerImage = styled(Grid)({
   height: '100%',
-})
+});
 
 const StyledGridItem = styled(Grid)({
   height: '100%',
   marginTop: 0,
-})
+});
 
-const StyledGridImageSmall = styled(Grid)({ height: '50%' })
+const StyledGridImageSmall = styled(Grid)({ height: '50%' });
 
 const Projet3dinvest = () => {
   // state pour l'ouverture de ModalImage
-  const [openModal, setOpenModal] = useState(false)
-  const [srcImage, setSrcImage] = useState('')
-  const [titleImage, setTitleImage] = useState('')
+  const [openModal, setOpenModal] = useState(false);
+  const [srcImage, setSrcImage] = useState('');
+  const [titleImage, setTitleImage] = useState('');
   // fonction pour l'ouverture de ModalImage
-  const handleOpen = (place, title) => (evt) => {
-    setSrcImage(place.src)
-    setTitleImage(title)
-    setOpenModal(true)
-  }
+  const handleOpen = (place, title) => () => {
+    setSrcImage(place.src);
+    setTitleImage(title);
+    setOpenModal(true);
+  };
   // fonction pour la fermeture de ModalImage
-  const handleClose = () => setOpenModal(false)
+  const handleClose = () => setOpenModal(false);
 
   return (
     <>
@@ -172,7 +174,7 @@ const Projet3dinvest = () => {
                             className="image"
                             onClick={handleOpen(
                               image3dinvest,
-                              'Application 3DInvest'
+                              'Application 3DInvest',
                             )}
                           />
                         </StyledCardContent>
@@ -188,8 +190,8 @@ const Projet3dinvest = () => {
                     justifycontent="center"
                     spacing={1}
                   >
-                    {listImage.map((image, index) => (
-                      <StyledGridImageSmall item xs={6} sm={6} key={index}>
+                    {listImage.map((image) => (
+                      <StyledGridImageSmall item xs={6} sm={6} key={image.title}>
                         <ItemCardImageBis elevation={0}>
                           <StyledCardContent
                             onClick={handleOpen(image.src, image.title)}
@@ -242,7 +244,7 @@ const Projet3dinvest = () => {
         </StyledGridContainer>
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default Projet3dinvest
+export default Projet3dinvest;

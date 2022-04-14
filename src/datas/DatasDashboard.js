@@ -1,12 +1,12 @@
 // import images / logos
-import imageDashboardHome from '../../public/imagesPortFolio/dashboard_image1.png'
-import imageDashboardData from '../../public/imagesPortFolio/dashboard_image2.png'
-import imageDashboardBank from '../../public/imagesPortFolio/dashboard_image4.png'
-import imageDashboardTransaction from '../../public/imagesPortFolio/dashboard_image5.png'
-import logoReact from '../../public/logoTechnos/logo_react.png'
-import logoSymfo from '../../public/logoTechnos/logo_symfo.png'
-import logoMui from '../../public/logoTechnos/logo_mui.png'
-import logoEmotion from '../../public/logoTechnos/logo_emotion.png'
+import imageDashboardHome from '@public/imagesPortFolio/dashboard_image1.png';
+import imageDashboardData from '@public/imagesPortFolio/dashboard_image2.png';
+import imageDashboardBank from '@public/imagesPortFolio/dashboard_image4.png';
+import imageDashboardTransaction from '@public/imagesPortFolio/dashboard_image5.png';
+import logoReact from '@public/logoTechnos/logo_react.png';
+import logoSymfo from '@public/logoTechnos/logo_symfo.png';
+import logoMui from '@public/logoTechnos/logo_mui.png';
+import logoEmotion from '@public/logoTechnos/logo_emotion.png';
 // tableaux des données
 export const listLogo = [
   {
@@ -29,7 +29,7 @@ export const listLogo = [
     src: logoEmotion,
     alt: 'logo_Emotion',
   },
-]
+];
 
 export const slideInfo = [
   {
@@ -52,7 +52,7 @@ export const slideInfo = [
     src: imageDashboardTransaction,
     alt: 'imageDashboard_Transaction',
   },
-]
+];
 
 export const textProjet = [
   {
@@ -77,7 +77,7 @@ export const textProjet = [
     key: 'card-content3',
     content: `L’ensemble du dashboard est responsive.`,
   },
-]
+];
 export const textCompetence = [
   {
     key: 'card-comp1',
@@ -93,4 +93,4 @@ export const textCompetence = [
     content:
       'Etude des API de MangoPay pour le couplage avec un backend Symfony',
   },
-]
+];

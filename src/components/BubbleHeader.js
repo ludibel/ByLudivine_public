@@ -1,34 +1,39 @@
 // import react / next
-import { useEffect, useState } from 'react'
-import Image from 'next/image'
-import PropTypes from 'prop-types'
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import PropTypes from 'prop-types';
 // import Emotion style
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 // import Emotion keyframe pour animation
-import { keyframes } from '@emotion/react'
+import { keyframes } from '@emotion/react';
 // import mui
-import { Grid, Typography, Divider } from '@mui/material'
+import {
+  Grid,
+  Typography,
+  Divider,
+} from '@mui/material';
 // import interne
-import bubblesHeader from '../../public/bubbles'
-import TextAnimation from './Animations/TextAnimation'
+import TextAnimation from '@components/Animations/TextAnimation';
+import bubblesHeader from '@public/bubbles';
+
 // animations
 const animateCircle = keyframes`
-  from {
-		transform: rotate(0deg) translate(0%, 0%);
-  }
-	to {
-		transform: rotate(360deg) translate(0%, -50%);
-	}
-`
+from {
+  transform: rotate(0deg) translate(0%, 0%);
+}
+to {
+  transform: rotate(360deg) translate(0%, -50%);
+}
+`;
 const scale = keyframes`
-  from {
-		transform: scale(0.4) ;
-  }
-	to {
-		transform: scale(1);
-	}
-`
-//style
+from {
+  transform: scale(0.4) ;
+}
+to {
+  transform: scale(1);
+}
+`;
+// style
 const StyledCircle = styled('div')({
   width: 70,
   height: 70,
@@ -36,7 +41,7 @@ const StyledCircle = styled('div')({
   boxShadow: `0 15px 35px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.1)`,
   position: 'absolute',
   animation: `${animateCircle} 10s infinite ease alternate`,
-})
+});
 const StyledDivLogo = styled('div')({
   position: 'relative',
   width: '100%',
@@ -45,14 +50,14 @@ const StyledDivLogo = styled('div')({
   '@media (min-width: 768px)': {
     paddingBottom: 0,
   },
-})
+});
 const StyledGridLogo = styled(Grid)({
   textAlign: 'center',
   '@media (min-width: 768px)': {
     background: 'linear-gradient(180deg,#ffffff 30%,#f4f4f4 100%)',
     display: 'none',
   },
-})
+});
 const StyledGridLogoBis = styled(Grid)({
   textAlign: 'center',
   display: 'none',
@@ -60,7 +65,7 @@ const StyledGridLogoBis = styled(Grid)({
     background: 'linear-gradient(180deg,#ffffff 30%,#f4f4f4 100%)',
     display: 'block',
   },
-})
+});
 const StyledGridImage = styled(Grid)({
   textAlign: 'center',
   paddingTop: 7,
@@ -72,7 +77,7 @@ const StyledGridImage = styled(Grid)({
       top: 4,
     },
   },
-})
+});
 const StyledTypo = styled(Typography)(({ theme }) => ({
   fontSize: '2.5em',
   fontWeight: '200',
@@ -86,7 +91,7 @@ const StyledTypo = styled(Typography)(({ theme }) => ({
   '@media (min-width: 1440px)': {
     fontSize: '4.5em',
   },
-}))
+}));
 const StyledGridTypo = styled(Grid)({
   position: 'absolute',
   left: 170,
@@ -110,7 +115,7 @@ const StyledGridTypo = styled(Grid)({
   '@media (min-width: 3000px)': {
     left: 800,
   },
-})
+});
 const StyledGridTypoBis = styled(Grid)({
   textAlign: 'center',
   marginTop: '-30px',
@@ -121,7 +126,7 @@ const StyledGridTypoBis = styled(Grid)({
   '@media (min-width: 768px)': {
     display: 'none',
   },
-})
+});
 const StyledTypoBis = styled(Typography)(({ theme }) => ({
   fontWeight: '200',
   color: theme.palette.color.one,
@@ -136,7 +141,7 @@ const StyledTypoBis = styled(Typography)(({ theme }) => ({
   '@media (min-width: 1440px)': {
     fontSize: '4.5em',
   },
-}))
+}));
 const StyledGridTypoTer = styled(Grid)({
   textAlign: 'justify',
   paddingLeft: '2em',
@@ -157,7 +162,7 @@ const StyledGridTypoTer = styled(Grid)({
     marginLeft: '15em',
     marginRight: '15em',
   },
-})
+});
 const StyledTypoTer = styled(Typography)(({ theme }) => ({
   color: theme.palette.color.three,
   paddingBottom: '1em',
@@ -169,59 +174,59 @@ const StyledTypoTer = styled(Typography)(({ theme }) => ({
     fontWeight: 700,
     color: theme.palette.color.one,
   },
-}))
+}));
 const StyledDivider = styled(Divider)(({ theme }) => ({
   borderColor: theme.palette.color.three,
   marginLeft: 60,
   marginRight: 60,
   borderBottomWidth: 'unset',
   marginTop: '1em',
-}))
+}));
 const StyledImage = styled(Image)({
   animation: `${scale} 5s linear`,
-})
+});
 const StyledGridContainer = styled(Grid)(({ theme }) => ({
   borderBottom: `2px solid ${theme.palette.color.three}`,
-}))
+}));
 const StyledGridBubblesMobile = styled(Grid)({
   '@media (min-width: 1024px)': {
     display: 'none',
   },
   position: 'relative',
-})
+});
 const StyledGridBubbles = styled(Grid)({
   '@media (max-width: 1023px)': {
     display: 'none',
   },
   position: 'relative',
-})
+});
 
 const BubbleHeader = ({ logo, portraitLudivine }) => {
-  const [width, setWidth] = useState()
-  const [heighttop, setHeighttop] = useState(400)
+  const [width, setWidth] = useState();
+  const [heighttop, setHeighttop] = useState(400);
   // définit la hauteur de bulles en fonction de la largeur
   useEffect(() => {
-    setWidth(window.innerWidth)
-    window.addEventListener('resize', () => setWidth(window.innerWidth))
+    setWidth(window.innerWidth);
+    window.addEventListener('resize', () => setWidth(window.innerWidth));
     if (width === 320 && width < 375) {
-      setHeighttop(340)
+      setHeighttop(340);
     }
     if (width >= 375 && width < 768) {
-      setHeighttop(416)
+      setHeighttop(416);
     }
     if (width >= 768 && width < 1024) {
-      setHeighttop(450)
+      setHeighttop(450);
     }
     if (width >= 1024 && width < 1440) {
-      setHeighttop(640)
+      setHeighttop(640);
     }
     if (width >= 1440 && width < 2560) {
-      setHeighttop(614)
+      setHeighttop(614);
     }
     if (width >= 2560) {
-      setHeighttop(625)
+      setHeighttop(625);
     }
-  })
+  });
 
   return (
     <>
@@ -233,9 +238,7 @@ const BubbleHeader = ({ logo, portraitLudivine }) => {
       >
         <StyledGridBubblesMobile item xs={12}>
           {bubblesHeader
-            .filter((el) => {
-              return el.displayMobile === true
-            })
+            .filter((el) => el.displayMobile === true)
             .map((bubble, index) => (
               <StyledCircle
                 id={`bubbles-${index}`}
@@ -346,10 +349,10 @@ const BubbleHeader = ({ logo, portraitLudivine }) => {
         </StyledGridTypoTer>
       </Grid>
     </>
-  )
-}
+  );
+};
 BubbleHeader.propTypes = {
   logo: PropTypes.object.isRequired,
   portraitLudivine: PropTypes.object.isRequired,
-}
-export default BubbleHeader
+};
+export default BubbleHeader;

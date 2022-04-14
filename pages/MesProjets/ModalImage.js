@@ -1,11 +1,12 @@
+/* eslint-disable prefer-arrow-callback */
 // import react / next
-import { forwardRef } from 'react'
-import Image from 'next/image'
-import PropTypes from 'prop-types'
+import { forwardRef } from 'react';
+import Image from 'next/image';
+import PropTypes from 'prop-types';
 // import Emotion styled
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 // import mui
-import { Dialog, DialogContent, Slide } from '@mui/material'
+import { Dialog, DialogContent, Slide } from '@mui/material';
 
 const StyledDialog = styled(Dialog)({
   '& .MuiPaper-root': {
@@ -15,35 +16,39 @@ const StyledDialog = styled(Dialog)({
     },
   },
   maxWidth: '100%',
-})
+});
 
 const StyledDialogContent = styled(DialogContent)({
   position: 'relative',
-})
-// Transition utilise forwarRef afin d'obtenir la ref qui lui est passée et la transmettre à SLide DOM
+});
+// Transition utilise forwarRef afin d'obtenir la ref qui lui est passée
+// et la transmettre à SLide DOM
 const Transition = forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />
-})
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
-const ModalImage = ({ onClose, open, image, alt }) => {
-  return (
-    <StyledDialog
-      onClose={onClose}
-      open={open}
-      fullScreen
-      TransitionComponent={Transition}
-    >
-      <StyledDialogContent>
-        <Image src={image} layout="fill" objectFit="contain" alt={alt} />
-      </StyledDialogContent>
-    </StyledDialog>
-  )
-}
+const ModalImage = ({
+  onClose,
+  open,
+  image,
+  alt,
+}) => (
+  <StyledDialog
+    onClose={onClose}
+    open={open}
+    fullScreen
+    TransitionComponent={Transition}
+  >
+    <StyledDialogContent>
+      <Image src={image} layout="fill" objectFit="contain" alt={alt} />
+    </StyledDialogContent>
+  </StyledDialog>
+);
 
 ModalImage.propTypes = {
   onClose: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
   image: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
-}
-export default ModalImage
+};
+export default ModalImage;

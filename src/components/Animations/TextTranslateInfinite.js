@@ -1,8 +1,9 @@
 // import Emotion style
-import styled from '@emotion/styled'
-import { keyframes } from '@emotion/react'
+import styled from '@emotion/styled';
+import { keyframes } from '@emotion/react';
 // import material ui
-import { Typography } from '@mui/material'
+import { Typography } from '@mui/material';
+
 const animateSlide = keyframes`
   0% {
     transform: translateX(0%);
@@ -10,12 +11,12 @@ const animateSlide = keyframes`
   100% {
     transform: translateX(-50%);
   }
-`
+`;
 const StyledDiv = styled('div')({
   display: 'flex',
   width: '100%',
   overflow: 'hidden',
-})
+});
 const StyledTypoTitleAnim = styled(Typography)(({ theme }) => ({
   color: theme.palette.color.one,
   fontWeight: 700,
@@ -44,24 +45,23 @@ const StyledTypoTitleAnim = styled(Typography)(({ theme }) => ({
     '&:nth-of-type(9)': { color: theme.palette.color.three },
     '&:nth-of-type(10)': { color: theme.palette.color.one },
   },
-}))
-const TextTranslateInfinite = () => {
-  return (
-    // slide
-    <StyledDiv id="title">
-      <StyledTypoTitleAnim>
-        <span>- Applications&nbsp;</span>
-        <span>Web&nbsp;</span>
-        <span>-&nbsp;</span>
-        <span>sites&nbsp;</span>
-        <span>Internet&nbsp;</span>
-        <span>- Applications&nbsp;</span>
-        <span>Web&nbsp;</span>
-        <span>-&nbsp;</span>
-        <span>sites&nbsp;</span>
-        <span>Internet&nbsp;</span>
-      </StyledTypoTitleAnim>
-    </StyledDiv>
-  )
-}
-export default TextTranslateInfinite
+}));
+const TextTranslateInfinite = () => (
+  // slide
+  <StyledDiv id="title">
+    <StyledTypoTitleAnim>
+      <span>- Applications&nbsp;</span>
+      <span>Web&nbsp;</span>
+      <span>-&nbsp;</span>
+      <span>sites&nbsp;</span>
+      <span>Internet&nbsp;</span>
+      <span>- Applications&nbsp;</span>
+      <span>Web&nbsp;</span>
+      <span>-&nbsp;</span>
+      <span>sites&nbsp;</span>
+      <span>Internet&nbsp;</span>
+    </StyledTypoTitleAnim>
+  </StyledDiv>
+);
+
+export default TextTranslateInfinite;

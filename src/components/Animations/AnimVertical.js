@@ -1,5 +1,5 @@
 // import keyframes Emotion
-import { keyframes } from '@emotion/react'
+import { keyframes } from '@emotion/react';
 // animation verticale
 const animateVertical = keyframes`
 0%,
@@ -27,6 +27,6 @@ const animateVertical = keyframes`
   90% {
     transform: translateY(-6.4px);
   }
-`
+`;
 
-export default animateVertical
+export default animateVertical;

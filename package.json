@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ./ --ext js,jsx,ts,tsx"
+    "lint": "eslint ./ --ext js,jsx --color",
+    "lint:fix": "eslint ./ --ext js,jsx --color --fix"
   },
   "dependencies": {
     "@emotion/react": "^11.6.0",
@@ -16,10 +17,10 @@
     "@mui/material": "^5.1.1",
     "@mui/styles": "^5.4.2",
     "axios": "^0.26.0",
-    "eslint-plugin-react-hooks": "^4.3.0",
     "next": "^12.1.0",
     "nodemailer": "^6.7.2",
     "noisejs": "^2.1.0",
+    "prop-types": "^15.8.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-google-recaptcha": "^2.1.0",
@@ -30,10 +31,13 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^12.1.0",
-    "eslint": "7",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "^12.1.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.27.0"
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0"
   }
 }

@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles'
+import { createTheme } from '@mui/material/styles';
 
 const themePerso = createTheme({
   typography: {
@@ -38,5 +38,5 @@ const themePerso = createTheme({
       xl: 1536,
     },
   },
-})
-export default themePerso
+});
+export default themePerso;

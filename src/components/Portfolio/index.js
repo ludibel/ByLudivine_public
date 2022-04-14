@@ -1,11 +1,11 @@
 // import next / image
-import Image from 'next/image'
-import Link from 'next/link'
-import PropTypes from 'prop-types'
+import Image from 'next/image';
+import Link from 'next/link';
+import PropTypes from 'prop-types';
 // import Emotion style
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 // impot mui
-import Zoom from '@mui/material/Zoom'
+import Zoom from '@mui/material/Zoom';
 // import mui
 import {
   Grid,
@@ -15,11 +15,11 @@ import {
   Card,
   CardHeader,
   CardActions,
-} from '@mui/material'
+} from '@mui/material';
 // import interne animations
-import animateVertical from '../Animations/AnimVertical'
-import animateDiagonal from '../Animations/AnimDiagonal'
-import animateHorizontal from '../Animations/AnimHorizontal'
+import animateVertical from '@components/Animations/AnimVertical';
+import animateDiagonal from '@components/Animations/AnimDiagonal';
+import animateHorizontal from '@components/Animations/AnimHorizontal';
 // style
 const StyledBox = styled(Box)({
   paddingTop: '1em',
@@ -31,7 +31,7 @@ const StyledBox = styled(Box)({
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
   overflow: 'hidden',
-})
+});
 const StyledCardOne = styled(Card)(({ theme }) => ({
   borderRadius: '50px 0px 50px 0px',
   backgroundColor: theme.palette.color.three,
@@ -47,10 +47,9 @@ const StyledCardOne = styled(Card)(({ theme }) => ({
   '@media (min-width: 2000px)': {
     width: 350,
   },
-}))
+}));
 const StyledCardBis = styled(Card)(({ theme }) => ({
   borderRadius: '50px 0px 50px 0px',
-  width: '100%',
   backgroundColor: theme.palette.color.three,
   textAlign: 'center',
   boxShadow: '1px 1px 24px 0px rgb(30 46 62 / 73%)',
@@ -64,10 +63,9 @@ const StyledCardBis = styled(Card)(({ theme }) => ({
   '@media (min-width: 2000px)': {
     width: 350,
   },
-}))
+}));
 const StyledCardTer = styled(Card)(({ theme }) => ({
   borderRadius: '50px 0px 50px 0px',
-  width: '100%',
   backgroundColor: theme.palette.color.three,
   textAlign: 'center',
   boxShadow: '1px 1px 24px 0px rgb(30 46 62 / 73%)',
@@ -81,7 +79,7 @@ const StyledCardTer = styled(Card)(({ theme }) => ({
   '@media (min-width: 2000px)': {
     width: 350,
   },
-}))
+}));
 const StyledButton = styled(Button)(({ theme }) => ({
   backgroundColor: theme.palette.color.one,
   color: '#fff',
@@ -98,7 +96,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
   },
   borderRadius: 10,
   fontWeight: 400,
-}))
+}));
 const StyledCardHeader = styled(CardHeader)(({ theme }) => ({
   '& .MuiCardHeader-title': {
     fontWeight: 700,
@@ -108,11 +106,11 @@ const StyledCardHeader = styled(CardHeader)(({ theme }) => ({
     fontWeight: 700,
     color: '#fff',
   },
-}))
+}));
 const StyledCardActions = styled(CardActions)({
   justifyContent: 'center',
   paddingBottom: '2em',
-})
+});
 const StyledTypoTitle = styled(Typography)(({ theme }) => ({
   textTransform: 'uppercase',
   fontWeight: '200',
@@ -131,7 +129,7 @@ const StyledTypoTitle = styled(Typography)(({ theme }) => ({
   '& span': {
     color: theme.palette.color.three,
   },
-}))
+}));
 const StyledGridContainerOne = styled(Grid)({
   paddingLeft: '1em',
   paddingRight: '1em',
@@ -140,14 +138,14 @@ const StyledGridContainerOne = styled(Grid)({
     paddingBottom: 16,
     marginTop: '2em',
   },
-})
+});
 const StyledGridContainerBis = styled(Grid)({
   '@media (min-width: 700px)': {
     paddingBottom: 16,
   },
   paddingLeft: '1em',
   paddingRight: '1em',
-})
+});
 const StyledGridImage = styled(Grid)({
   position: 'relative',
   width: 100,
@@ -156,7 +154,7 @@ const StyledGridImage = styled(Grid)({
     width: 200,
     height: 125,
   },
-})
+});
 const StyledGridCardOne = styled(Grid)({
   display: 'flex',
   justifyContent: 'center',
@@ -166,7 +164,7 @@ const StyledGridCardOne = styled(Grid)({
   '@media (min-width: 1024px)': {
     transform: 'translate(42%, -15%)',
   },
-})
+});
 const StyledGridCardBis = styled(Grid)({
   display: 'flex',
   justifyContent: 'center',
@@ -176,7 +174,7 @@ const StyledGridCardBis = styled(Grid)({
   '@media (min-width: 1024px)': {
     transform: 'translate(0%, -45%)',
   },
-})
+});
 const StyledGridCardTer = styled(Grid)({
   display: 'flex',
   justifyContent: 'center',
@@ -186,7 +184,7 @@ const StyledGridCardTer = styled(Grid)({
   '@media (min-width: 900px)': {
     transform: 'translate(-18%,3%)',
   },
-})
+});
 const StyledBoxContainer = styled(Box)({
   '@media (min-width: 1024px)': {
     width: 1024,
@@ -195,149 +193,147 @@ const StyledBoxContainer = styled(Box)({
     marginTop: '3em',
     marginBottom: '2em',
   },
-})
+});
 
-const Portfolio = ({ image3dinvest, imageDashboard, logo }) => {
-  return (
-    <StyledBox id="MesProjets">
-      <Zoom in={true} timeout={3000}>
-        <StyledTypoTitle variant="h3">
-          Mes projets <span> web </span>
-        </StyledTypoTitle>
-      </Zoom>
-      <StyledBoxContainer>
-        <StyledGridContainerOne
-          container
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
-          spacing={2}
-        >
-          <StyledGridCardOne item xs={12} sm={6} md={6}>
-            <StyledCardOne>
-              <Grid
-                container
-                direction="row"
-                justifyContent="center"
-                alignItems="flex-start"
-                sx={{ paddingTop: '1.5em' }}
-              >
-                <StyledGridImage item xs={12}>
-                  <Image
-                    src={image3dinvest}
-                    layout="fill"
-                    objectFit="contain"
-                    alt="image_projet_3DInvest"
-                    quality={100}
-                  />
-                </StyledGridImage>
-              </Grid>
-              <StyledCardHeader
-                title="3DInvest"
-                subheader="#Redux / #Symfony / #PWA"
-              />
-              <StyledCardActions>
-                <Link href="/MesProjets/3dinvest">
-                  <StyledButton
-                    variant="outlined"
-                    className="imageBis"
-                    aria-label="Voir le projet"
-                  >
-                    Voir le projet
-                  </StyledButton>
-                </Link>
-              </StyledCardActions>
-            </StyledCardOne>
-          </StyledGridCardOne>
-        </StyledGridContainerOne>
-        <StyledGridContainerBis
-          container
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
-          spacing={2}
-        >
-          <StyledGridCardBis item xs={12} sm={6} md={6}>
-            <StyledCardBis>
-              <Grid
-                container
-                direction="row"
-                justifyContent="center"
-                alignItems="flex-start"
-                sx={{ paddingTop: '1.5em' }}
-              >
-                <StyledGridImage item xs={12}>
-                  <Image
-                    src={imageDashboard}
-                    layout="fill"
-                    objectFit="contain"
-                    alt="image_projet_Dashboard"
-                    quality={100}
-                  />
-                </StyledGridImage>
-              </Grid>
-              <StyledCardHeader
-                title="DashBoard"
-                subheader="#React / #Symfony / #MUI"
-              />
-              <StyledCardActions>
-                <Link href="/MesProjets/Dashboard">
-                  <StyledButton
-                    variant="outlined"
-                    className="imageBis"
-                    aria-label="Voir le projet"
-                  >
-                    Voir le projet
-                  </StyledButton>
-                </Link>
-              </StyledCardActions>
-            </StyledCardBis>
-          </StyledGridCardBis>
-          <StyledGridCardTer item xs={12} sm={6} md={6}>
-            <StyledCardTer>
-              <Grid
-                container
-                direction="row"
-                justifyContent="center"
-                alignItems="flex-start"
-                sx={{ paddingTop: '1.5em' }}
-              >
-                <StyledGridImage item xs={12}>
-                  <Image
-                    src={logo}
-                    layout="fill"
-                    objectFit="contain"
-                    alt="logo_Site_ByLudivine"
-                    quality={100}
-                  />
-                </StyledGridImage>
-              </Grid>
+const Portfolio = ({ image3dinvest, imageDashboard, logo }) => (
+  <StyledBox id="MesProjets">
+    <Zoom in timeout={3000}>
+      <StyledTypoTitle variant="h3">
+        Mes projets <span> web </span>
+      </StyledTypoTitle>
+    </Zoom>
+    <StyledBoxContainer>
+      <StyledGridContainerOne
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+        spacing={2}
+      >
+        <StyledGridCardOne item xs={12} sm={6} md={6}>
+          <StyledCardOne>
+            <Grid
+              container
+              direction="row"
+              justifyContent="center"
+              alignItems="flex-start"
+              sx={{ paddingTop: '1.5em' }}
+            >
+              <StyledGridImage item xs={12}>
+                <Image
+                  src={image3dinvest}
+                  layout="fill"
+                  objectFit="contain"
+                  alt="image_projet_3DInvest"
+                  quality={100}
+                />
+              </StyledGridImage>
+            </Grid>
+            <StyledCardHeader
+              title="3DInvest"
+              subheader="#Redux / #Symfony / #PWA"
+            />
+            <StyledCardActions>
+              <Link href="/MesProjets/3dinvest">
+                <StyledButton
+                  variant="outlined"
+                  className="imageBis"
+                  aria-label="Voir le projet"
+                >
+                  Voir le projet
+                </StyledButton>
+              </Link>
+            </StyledCardActions>
+          </StyledCardOne>
+        </StyledGridCardOne>
+      </StyledGridContainerOne>
+      <StyledGridContainerBis
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+        spacing={2}
+      >
+        <StyledGridCardBis item xs={12} sm={6} md={6}>
+          <StyledCardBis>
+            <Grid
+              container
+              direction="row"
+              justifyContent="center"
+              alignItems="flex-start"
+              sx={{ paddingTop: '1.5em' }}
+            >
+              <StyledGridImage item xs={12}>
+                <Image
+                  src={imageDashboard}
+                  layout="fill"
+                  objectFit="contain"
+                  alt="image_projet_Dashboard"
+                  quality={100}
+                />
+              </StyledGridImage>
+            </Grid>
+            <StyledCardHeader
+              title="DashBoard"
+              subheader="#React / #Symfony / #MUI"
+            />
+            <StyledCardActions>
+              <Link href="/MesProjets/Dashboard">
+                <StyledButton
+                  variant="outlined"
+                  className="imageBis"
+                  aria-label="Voir le projet"
+                >
+                  Voir le projet
+                </StyledButton>
+              </Link>
+            </StyledCardActions>
+          </StyledCardBis>
+        </StyledGridCardBis>
+        <StyledGridCardTer item xs={12} sm={6} md={6}>
+          <StyledCardTer>
+            <Grid
+              container
+              direction="row"
+              justifyContent="center"
+              alignItems="flex-start"
+              sx={{ paddingTop: '1.5em' }}
+            >
+              <StyledGridImage item xs={12}>
+                <Image
+                  src={logo}
+                  layout="fill"
+                  objectFit="contain"
+                  alt="logo_Site_ByLudivine"
+                  quality={100}
+                />
+              </StyledGridImage>
+            </Grid>
 
-              <StyledCardHeader
-                title="ByLudivine"
-                subheader="#Next / #Emotion / #MUI"
-              />
-              <StyledCardActions>
-                <Link href="/MesProjets/ByLudivine">
-                  <StyledButton
-                    variant="outlined"
-                    className="imageBis"
-                    aria-label="Voir le projet"
-                  >
-                    Voir le projet
-                  </StyledButton>
-                </Link>
-              </StyledCardActions>
-            </StyledCardTer>
-          </StyledGridCardTer>
-        </StyledGridContainerBis>
-      </StyledBoxContainer>
-    </StyledBox>
-  )
-}
+            <StyledCardHeader
+              title="ByLudivine"
+              subheader="#Next / #Emotion / #MUI"
+            />
+            <StyledCardActions>
+              <Link href="/MesProjets/ByLudivine">
+                <StyledButton
+                  variant="outlined"
+                  className="imageBis"
+                  aria-label="Voir le projet"
+                >
+                  Voir le projet
+                </StyledButton>
+              </Link>
+            </StyledCardActions>
+          </StyledCardTer>
+        </StyledGridCardTer>
+      </StyledGridContainerBis>
+    </StyledBoxContainer>
+  </StyledBox>
+);
 Portfolio.propTypes = {
   image3dinvest: PropTypes.object.isRequired,
   imageDashboard: PropTypes.object.isRequired,
   logo: PropTypes.object.isRequired,
-}
-export default Portfolio
+};
+export default Portfolio;

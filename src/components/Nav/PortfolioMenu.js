@@ -1,10 +1,10 @@
 // import react / next
-import { useState, useRef } from 'react'
-import Link from 'next/link'
+import { useState, useRef } from 'react';
+import Link from 'next/link';
 // import Emtion Style
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 // import mui
-import { Button, Menu, MenuItem } from '@mui/material'
+import { Button, Menu, MenuItem } from '@mui/material';
 
 const StyledButton = styled(Button)(({ theme }) => ({
   color: theme.palette.color.six,
@@ -18,24 +18,24 @@ const StyledButton = styled(Button)(({ theme }) => ({
     color: theme.palette.color.one,
     backgroundColor: 'transparent',
   },
-}))
+}));
 const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
   color: theme.palette.color.one,
-}))
+}));
 
 const PortfolioMenu = () => {
-  const [anchorEl, setAnchorEl] = useState(null)
-  const open = Boolean(anchorEl)
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
   // useRef permet d'accéder à l'element du DOM ciblé, ici le Button
-  const divRef = useRef()
+  const divRef = useRef();
   const handleClick = () => {
     // ouverture du menu portFolio au point de l'élément ciblé par useRef
-    setAnchorEl(divRef.current)
-  }
+    setAnchorEl(divRef.current);
+  };
   const handleClose = () => {
     // fermeture du menu portFolio
-    setAnchorEl(null)
-  }
+    setAnchorEl(null);
+  };
 
   return (
     <>
@@ -74,6 +74,6 @@ const PortfolioMenu = () => {
         </StyledMenuItem>
       </Menu>
     </>
-  )
-}
-export default PortfolioMenu
+  );
+};
+export default PortfolioMenu;

@@ -1,17 +1,17 @@
-import image3dinvestScoring from '../../public/imagesPortFolio/smartphone-scoring.png'
-import image3dinvestFisca from '../../public/imagesPortFolio/smartphone-fisca.png'
-import image3dinvestDegrade from '../../public/imagesPortFolio/smartphone-degrades.png'
-import logoRedux from '../../public/logoTechnos/logo_redux.png'
-import logoReact from '../../public/logoTechnos/logo_react.png'
-import logoSymfo from '../../public/logoTechnos/logo_symfo.png'
-import logoMui from '../../public/logoTechnos/logo_mui.png'
-import logoApi from '../../public/logoTechnos/logo_api.png'
-import logoJspdf from '../../public/logoTechnos/logo_jspdf.png'
-import logoPwa from '../../public/logoTechnos/logo_pwa.png'
-import logoApex from '../../public/logoTechnos/logo_apex.png'
-import logoRestful from '../../public/logoTechnos/logo_restful.png'
-import logoPostgre from '../../public/logoTechnos/logo_postgresql.png'
-import { Button } from '@mui/material'
+import { Button } from '@mui/material';
+import image3dinvestScoring from '@public/imagesPortFolio/smartphone-scoring.png';
+import image3dinvestFisca from '@public/imagesPortFolio/smartphone-fisca.png';
+import image3dinvestDegrade from '@public/imagesPortFolio/smartphone-degrades.png';
+import logoRedux from '@public/logoTechnos/logo_redux.png';
+import logoReact from '@public/logoTechnos/logo_react.png';
+import logoSymfo from '@public/logoTechnos/logo_symfo.png';
+import logoMui from '@public/logoTechnos/logo_mui.png';
+import logoApi from '@public/logoTechnos/logo_api.png';
+import logoJspdf from '@public/logoTechnos/logo_jspdf.png';
+import logoPwa from '@public/logoTechnos/logo_pwa.png';
+import logoApex from '@public/logoTechnos/logo_apex.png';
+import logoRestful from '@public/logoTechnos/logo_restful.png';
+import logoPostgre from '@public/logoTechnos/logo_postgresql.png';
 
 // tableaux des données
 export const listImage = [
@@ -30,7 +30,7 @@ export const listImage = [
     src: image3dinvestDegrade,
     alt: 'image-3dinvest-degradé',
   },
-]
+];
 export const listLogo = [
   {
     title: 'Redux',
@@ -82,7 +82,7 @@ export const listLogo = [
     src: logoApex,
     alt: 'logo_ApexChartsJS',
   },
-]
+];
 export const textProjet = [
   {
     className: 'paragrapheBtnJustify',
@@ -123,7 +123,7 @@ export const textProjet = [
       </Button>
     ),
   },
-]
+];
 export const textCompetence = [
   {
     key: 'card-comp1',
@@ -149,4 +149,4 @@ export const textCompetence = [
     content:
       'Réalisation du template du dossier bancaire pour sa génération en PDF.',
   },
-]
+];
