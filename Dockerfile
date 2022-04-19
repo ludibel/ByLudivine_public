@@ -9,7 +9,3 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 # Copie tous les fichiers du répertoire courant (code du projet) dans ce nouveau conteneur
 COPY . .
-# Utilise le port 3000 comme port d'accès : http://localhost:3000
-EXPOSE 3001
-# Paramètre la variable d'environnement
-ENV PORT 3001
