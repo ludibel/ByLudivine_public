@@ -1,4 +1,4 @@
-version: "3.7"
+version: '3.7'
 
 services:
   node:
@@ -7,7 +7,7 @@ services:
       target: node
     container_name: docker_node
     ports:
-      - "3000:3000"
+      - '3000:3000'
     tty: true
     volumes:
       - .:/app
@@ -16,5 +16,5 @@ services:
     image: schickling/mailcatcher
     container_name: mailcatcher
     ports:
-      - "1080:1080"
-      - "1025:1025"
+      - '1080:1080'
+      - '1025:1025'

@@ -9,6 +9,8 @@ jobs:
   deploy:
     name: 'Deployment'
     runs-on: 'ubuntu-latest'
+    env:
+      NEXT_TELEMETRY_DISABLED: 1
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v2
