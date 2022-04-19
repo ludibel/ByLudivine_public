@@ -1,0 +1,53 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lintTest:
+    name: 'Test lint'
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v2
+
+      - name: 'run lint'
+        run: yarn lint
+  deploy:
+    name: 'Deployment'
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v2
+
+      - name: 'Setup node'
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: 'yarn'
+          cache-dependency-path: 'yarn.lock'
+
+      - name: 'Build docker image'
+        run: |
+        docker-compose build
+        docker-compose up -d
+        docker exec -it docker_node sh
+
+      - name: 'Install dependencies'
+        run: yarn install
+
+      - name: 'Launch application'
+        run: yarn dev
+
+      - name: 'Test curl'
+        run: curl "http://localhost:3000"
+
+      - name: 'Exit container'
+        if: always()
+        run: exit
+
+      - name: 'Stop container'
+        if: always() 
+        run: docker-compose down
