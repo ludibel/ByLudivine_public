@@ -30,7 +30,7 @@ jobs:
         run: docker ps
 
       - name: 'Shell container'
-        run: script -e -c 'docker exec -it docker_node sh'
+        run: script -q -e -c 'docker exec -it docker_node sh'
 
       - name: 'Install dependencies'
         run: yarn install
