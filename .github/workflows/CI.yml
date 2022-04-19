@@ -6,15 +6,6 @@ on:
   pull_request:
 
 jobs:
-  lintTest:
-    name: 'Test lint'
-    runs-on: 'ubuntu-latest'
-    steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v2
-
-      - name: 'run lint'
-        run: yarn lint
   deploy:
     name: 'Deployment'
     runs-on: 'ubuntu-latest'
@@ -35,11 +26,17 @@ jobs:
       - name: 'Start container'
         run: docker-compose up -d
 
+      - name: 'List container'
+        run: docker ps
+
       - name: 'Shell container'
         run: docker exec -it docker_node sh
 
       - name: 'Install dependencies'
         run: yarn install
+
+      - name: 'run lint'
+        run: yarn lint
 
       - name: 'Launch application'
         run: yarn dev
