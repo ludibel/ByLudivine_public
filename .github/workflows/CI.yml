@@ -22,19 +22,19 @@ jobs:
           cache: 'yarn'
           cache-dependency-path: 'yarn.lock'
 
-      - name: 'Build docker image'
-        run: docker-compose build
+      # - name: 'Build docker image'
+      #   run: docker-compose build
 
-      - name: 'Start container'
-        run: docker-compose up -d
+      # - name: 'Start container'
+      #   run: docker-compose up -d
 
-      - name: 'List container'
-        run: docker ps
+      # - name: 'List container'
+      #   run: docker ps
 
-      - name: 'Shell container'
-        shell: 'script -q -e -c "bash {0}"'
-        run: |
-          docker exec docker_node sh
+      # - name: 'Shell container'
+      #   shell: 'script -q -e -c "bash {0}"'
+      #   run: |
+      #     docker exec docker_node sh
 
       - name: 'Install dependencies'
         run: yarn install
@@ -43,15 +43,16 @@ jobs:
         run: yarn lint
 
       - name: 'Launch application'
+        uses: docker_node
         run: yarn dev
 
       - name: 'Test curl'
         run: curl "http://localhost:3000"
 
-      - name: 'Exit container'
-        if: always()
-        run: exit
+      # - name: 'Exit container'
+      #   if: always()
+      #   run: exit
 
-      - name: 'Stop container'
-        if: always()
-        run: docker-compose down
+      # - name: 'Stop container'
+      #   if: always()
+      #   run: docker-compose down

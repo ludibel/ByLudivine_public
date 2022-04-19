@@ -9,3 +9,7 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 # Copie tous les fichiers du répertoire courant (code du projet) dans ce nouveau conteneur
 COPY . .
+
+EXPOSE 3000
+
+ENV PORT 3000
