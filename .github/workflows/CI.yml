@@ -32,7 +32,7 @@ jobs:
       - name: 'Shell container'
         shell: 'script -q -e -c "bash{0}"'
         run: |
-        docker exec -it docker_node sh
+          docker exec -it docker_node sh
 
       - name: 'Install dependencies'
         run: yarn install
