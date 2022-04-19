@@ -41,7 +41,7 @@ jobs:
         run: yarn lint
 
       - name: 'Launch application'
-        run: yarn build
+        run: yarn dev
 
       - name: 'Test curl'
         run: curl "http://localhost:3000"
