@@ -29,7 +29,6 @@ jobs:
         run: yarn lint
 
       - name: 'Launch application'
-        uses: docker_node
         run: yarn dev
 
       - name: 'Test curl'
