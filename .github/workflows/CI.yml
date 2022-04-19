@@ -30,10 +30,13 @@ jobs:
           cache-dependency-path: 'yarn.lock'
 
       - name: 'Build docker image'
-        run: |
-        docker-compose build
-        docker-compose up -d
-        docker exec -it docker_node sh
+        run: docker-compose build
+
+      - name: 'Start container'
+        run: docker-compose up -d
+
+      - name: 'Shell container'
+        run: docker exec -it docker_node sh
 
       - name: 'Install dependencies'
         run: yarn install
@@ -49,5 +52,5 @@ jobs:
         run: exit
 
       - name: 'Stop container'
-        if: always() 
+        if: always()
         run: docker-compose down
