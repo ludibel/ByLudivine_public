@@ -1,5 +1,7 @@
 Ceci est un projet [Next.js](https://nextjs.org/) créé avec [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+[![Continuous Integration](https://github.com/ludibel/ByLudivine_public/actions/workflows/CI.yml/badge.svg)](https://github.com/ludibel/ByLudivine_public/actions/workflows/CI.yml)
+
 # Site Internet de [ByLudivine.com](https://www.byludivine.com)
 
 Vous trouverez, dans ce dépot, le code source de mon site Internet.
