@@ -6,8 +6,8 @@ on:
   pull_request:
 
 jobs:
-  docker:
-    name: 'Docker'
+  deploy:
+    name: 'Deployment'
     runs-on: 'ubuntu-latest'
     steps:
       - name: 'Checkout'
@@ -34,27 +34,6 @@ jobs:
         run: |
           docker exec docker_node sh
 
-      - name: 'Exit container'
-        if: always()
-        run: exit
-
-      - name: 'Stop container'
-        if: always()
-        run: docker-compose down
-  deploy:
-    name: 'Deployment'
-    runs-on: 'ubuntu-latest'
-    steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v2
-
-      - name: 'Setup node'
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
-          cache: 'yarn'
-          cache-dependency-path: 'yarn.lock'
-
       - name: 'Install dependencies'
         run: yarn install
 
@@ -63,3 +42,11 @@ jobs:
 
       - name: 'Launch application'
         run: yarn build
+
+      - name: 'Exit container'
+        if: always()
+        run: exit
+
+      - name: 'Stop container'
+        if: always()
+        run: docker-compose down
