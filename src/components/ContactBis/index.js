@@ -12,7 +12,6 @@ import {
 import FieldContact from '@components/ContactBis/Field';
 import ScrollToFade from '@components/Animations/Fade';
 import ScrollToSlide from '@components/Animations/Slide';
-import TextTranslateInfinite from '@components/Animations/TextTranslateInfinite';
 
 // style avec Emotion
 const StyledGridContainer = styled(Grid)({
@@ -50,13 +49,14 @@ const StyledGridMalt = styled(Grid)(({ theme }) => ({
   textAlign: 'center',
   backgroundColor: theme.palette.color.three,
   borderRadius: '50px 0px 0px 50px',
-  marginLeft: '3em',
+  marginLeft: '1em',
   marginTop: '1.5em',
   marginBottom: '1.5em',
   boxShadow: '0 0 10px rgb(0 0 0 / 20%)',
   '@media (min-width: 1024px)': {
     marginTop: '2em',
     marginBottom: '2em',
+    marginLeft: '3em',
   },
 }));
 const StyledGridContainerMalt = styled(Grid)({
@@ -96,7 +96,7 @@ const StyledTypoMaltOne = styled(Typography)(({ theme }) => ({
 }));
 const StyledTypoMaltBis = styled(Typography)({
   fontWeight: 700,
-  color: '#fff',
+  color: '#ffffff',
   fontSize: '1.2em',
   '@media (min-width: 1024px)': {
     fontSize: '1.4em',
@@ -189,7 +189,6 @@ const StyledBox = styled(Box)({
 
 const Contact = () => (
   <StyledBox>
-    <TextTranslateInfinite />
     <Zoom in timeout={3000}>
       <StyledTypoTitle variant="h3" component="h3">
         Prendre<span> contact </span>
