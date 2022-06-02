@@ -48,6 +48,7 @@ const PortfolioMenu = () => {
         Mes projets
       </StyledButton>
       <Menu
+        disableScrollLock
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
