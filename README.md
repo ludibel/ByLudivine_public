@@ -1,6 +1,8 @@
 Ceci est un projet [Next.js](https://nextjs.org/) créé avec [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 [![Continuous Integration](https://github.com/ludibel/ByLudivine_public/actions/workflows/CI.yml/badge.svg)](https://github.com/ludibel/ByLudivine_public/actions/workflows/CI.yml)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
 # Site Internet de [ByLudivine.com](https://www.byludivine.com)
 
