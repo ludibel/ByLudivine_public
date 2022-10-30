@@ -43,7 +43,7 @@ Pour soumettre une modification, la démarche à suivre est la suivante :
 1. Forkez le projet si ce n'est pas déjà fait (copie du référentiel sur votre environnement local)
 2. Créez une branche avec un nom descriptif
 3. Faites les modifications et pushez les
-4. Effectuez la Pull Request en utilisant le template : [PULL_REQUEST](.github/PULL_REQUEST_TEMPLATE/pull_resquest_template.md)
+4. Effectuez la Pull Request en utilisant le template : [PULL_REQUEST](.github/PULL_REQUEST_TEMPLATE/pull_request_template.md)
 
 Si besoin vous trouverez les informations sur [GitHub créer une Pull Request à partir d'un fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)
 
@@ -85,6 +85,7 @@ git merge uspstream/main
   - ♿ :wheelchair: lors de l'amélioration de l'accessibilité
   - 🚸 :children_crossing: lors de l'amélioration de l'expérience utilisateur
   - 🔍 :mag: pour les modifications liées au référencement naturel
+  - ✏️ :pencil2: lors de la correction de fautes de frappe
 
 ## Comment configurer votre environnement et executer des tests
 

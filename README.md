@@ -162,4 +162,4 @@ Afin de contribuer dans un environnement sain et convivial merci de respecter le
 
 ### Comment contribuer
 
-Vous trouverez l'ensemble des directives à suivre pour contribuer au projet dans le fichier [Contributing](CONTIBUTING.md)
+Vous trouverez l'ensemble des directives à suivre pour contribuer au projet dans le fichier [Contributing](CONTRIBUTING.md)
