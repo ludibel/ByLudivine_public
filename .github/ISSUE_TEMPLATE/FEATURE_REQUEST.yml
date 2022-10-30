@@ -1,0 +1,27 @@
+name: '✨ Nouvelle fonctionnalité'
+description: Proposer une nouvelle fonctionnalité.
+title: '✨ <title>'
+labels: ['✨ fonctionnalité']
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: 'Description de la proposition'
+      description: Une description claire et concise de la proposition.
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: 'URL de la page'
+      description: Liens vers la page.
+    validations:
+      required: false
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 'Contexte supplémentaire'
+      description: Ajoutez ici tout autre contexte ou capture d'écran concernant la fonctionnalité.
+      render: bash
+    validations:
+      required: false

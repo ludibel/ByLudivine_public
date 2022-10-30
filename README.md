@@ -149,3 +149,17 @@ https://nodemailer.com/about/
 
 Ajout de google reCAPTCHA V2 (case à cocher) au formulaire de contact contre les spams
 https://www.google.com/recaptcha/about/
+
+## Contribuer au projet
+
+### Licence
+
+Le projet est sous la licence open source [MIT](LICENSE.md)
+
+### Code de conduite
+
+Afin de contribuer dans un environnement sain et convivial merci de respecter le [code de conduite](CODE_OF_CONDUCT.md)
+
+### Comment contribuer
+
+Vous trouverez l'ensemble des directives à suivre pour contribuer au projet dans le fichier [Contributing](CONTIBUTING.md)
