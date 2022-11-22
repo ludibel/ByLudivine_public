@@ -72,20 +72,20 @@ git merge uspstream/main
 - Utiliser des phrases impératives, subjectives et claires (exemple: Modifier le README et non README modifié)
 - Commencer les messages de commit avec un joli emoji 😀 :
 
-  - 🎨 :art: lors de l'amélioration de la structure/ format du code
-  - 🐎 :racehorse: lors de l'amélioration de performance
-  - 🐛 :bug: lors de la correction de bug
-  - 🔥 :fire: lors de la suppression de code ou de fichier
-  - 💚 :green_heart: lors d'une correction de CI
-  - ✅ :white_check_mark: lors de l'ajout, la mise à jour de tests
-  - ⬆️ :arrow_up: lors de la mise à jour de dépendances
-  - ✨ :sparkles: lors de l'introduction de nouvelles fonctionnalités
-  - 💄 :lipstick: lors de l'ajout ou la mise à jours de UI et les fichiers de styles
-  - ♻️ :recycle: lors de la refactorisation du code
-  - ♿ :wheelchair: lors de l'amélioration de l'accessibilité
-  - 🚸 :children_crossing: lors de l'amélioration de l'expérience utilisateur
-  - 🔍 :mag: pour les modifications liées au référencement naturel
-  - ✏️ :pencil2: lors de la correction de fautes de frappe
+  - 🎨 `:art:` lors de l'amélioration de la structure/ format du code
+  - 🐎 `:racehorse:` lors de l'amélioration de performance
+  - 🐛 `:bug:` lors de la correction de bug
+  - 🔥 `:fire:` lors de la suppression de code ou de fichier
+  - 💚 `:green_heart:` lors d'une correction de CI
+  - ✅ `:white_check_mark:` lors de l'ajout, la mise à jour de tests
+  - ⬆️ `:arrow_up:` lors de la mise à jour de dépendances
+  - ✨ `:sparkles:` lors de l'introduction de nouvelles fonctionnalités
+  - 💄 `:lipstick:` lors de l'ajout ou la mise à jours de UI et les fichiers de styles
+  - ♻️ `:recycle:` lors de la refactorisation du code
+  - ♿ `:wheelchair:` lors de l'amélioration de l'accessibilité
+  - 🚸 `:children_crossing:` lors de l'amélioration de l'expérience utilisateur
+  - 🔍 `:mag:` pour les modifications liées au référencement naturel
+  - ✏️ `:pencil2:` lors de la correction de fautes de frappe
 
 ## Comment configurer votre environnement et executer des tests
 
