@@ -29,7 +29,7 @@ const StyledDivBubbles = styled('div')({
 });
 const StyledDivBubble = styled('div')({
   backgroundColor: 'white',
-  backgroundImage: `url('spritesheet_bubble_White_2.png')`,
+  backgroundImage: `url('spritesheet_bubble.png')`,
   backgroundSize: '1076px 1076px',
   borderRadius: '50%',
   boxShadow: '0 15px 35px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.1)',

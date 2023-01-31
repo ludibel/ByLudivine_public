@@ -91,7 +91,7 @@ const Footer = ({ logo }) => (
       >
         <StyledGridText item xs={12}>
           <StyledTypoOne>
-            Copyright <CopyrightIcon /> 2022 - ByLudivine.com - Tous droits
+            Copyright <CopyrightIcon /> 2023 - ByLudivine.com - Tous droits
             réservés
           </StyledTypoOne>
         </StyledGridText>
